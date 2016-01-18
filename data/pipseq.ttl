@@ -1,0 +1,1846 @@
+# baseURI: http://pipseq.org
+# imports: http://spinrdf.org/spin
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://pipseq.org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pip: <http://pipseq.org#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://pipseq.org>
+  rdf:type owl:Ontology ;
+  owl:imports <http://spinrdf.org/spin> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+pip:AUD
+  rdf:type owl:Class ;
+  rdfs:label "AUD"^^xsd:string ;
+  rdfs:subClassOf pip:Currency ;
+.
+pip:AUDCAD
+  rdf:type owl:Class ;
+  rdfs:label "AUD/CAD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:AUD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:CAD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:AUDCAD_1
+  rdf:type pip:AUDCAD ;
+  pip:baseCurrency pip:AUD_1 ;
+  pip:quoteCurrency pip:CAD_1 ;
+  rdfs:label "AUDCAD 1"^^xsd:string ;
+.
+pip:AUDJPY
+  rdf:type owl:Class ;
+  rdfs:label "AUD/JPY"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:AUD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:JPY ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:AUDJPY_1
+  rdf:type pip:AUDJPY ;
+  pip:baseCurrency pip:AUD_1 ;
+  pip:quoteCurrency pip:JPY_1 ;
+  rdfs:label "AUDJPY 1"^^xsd:string ;
+.
+pip:AUDNZD
+  rdf:type owl:Class ;
+  rdfs:label "AUD/NZD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:AUD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:NZD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:AUDNZD_1
+  rdf:type pip:AUDNZD ;
+  pip:baseCurrency pip:AUD_1 ;
+  pip:quoteCurrency pip:NZD_1 ;
+  rdfs:label "AUDNZD 1"^^xsd:string ;
+.
+pip:AUDUSD
+  rdf:type owl:Class ;
+  rdfs:label "AUD/USD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:AUD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:USD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:AUDUSD_1
+  rdf:type pip:AUDUSD ;
+  pip:baseCurrency pip:AUD_1 ;
+  pip:quoteCurrency pip:USD_1 ;
+  rdfs:label "AUDUSD 1"^^xsd:string ;
+.
+pip:AUD_1
+  rdf:type pip:AUD ;
+  pip:base "dollar"^^xsd:string ;
+  rdfs:label "AUD 1"^^xsd:string ;
+.
+pip:Ask
+  rdf:type owl:Class ;
+  rdfs:label "Ask"^^xsd:string ;
+  rdfs:subClassOf pip:Price ;
+.
+pip:Australia
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:AustraliaEconomy ;
+  rdfs:label "Australia"^^xsd:string ;
+.
+pip:AustraliaEconomy
+  rdf:type pip:Economy ;
+  pip:isGovernedBy pip:AustraliaGovernment ;
+  rdfs:label "Australian economy"^^xsd:string ;
+.
+pip:AustraliaGovernment
+  rdf:type pip:Government ;
+  rdfs:label "Australia government"^^xsd:string ;
+.
+pip:Benign
+  rdf:type pip:EstimatedEconomicImpact ;
+  rdfs:label "Benign"^^xsd:string ;
+.
+pip:Bid
+  rdf:type owl:Class ;
+  rdfs:label "Bid"^^xsd:string ;
+  rdfs:subClassOf pip:Price ;
+.
+pip:CAD
+  rdf:type owl:Class ;
+  rdfs:label "CAD"^^xsd:string ;
+  rdfs:subClassOf pip:Currency ;
+.
+pip:CADJPY
+  rdf:type owl:Class ;
+  rdfs:label "CAD/JPY"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:CAD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:JPY ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:CADJPY_1
+  rdf:type pip:CADJPY ;
+  pip:baseCurrency pip:CAD_1 ;
+  pip:quoteCurrency pip:JPY_1 ;
+  rdfs:label "CADJPY 1"^^xsd:string ;
+.
+pip:CAD_1
+  rdf:type pip:CAD ;
+  pip:base "dollar"^^xsd:string ;
+  rdfs:label "CAD 1"^^xsd:string ;
+.
+pip:CalendarEvent
+  rdf:type owl:Class ;
+  rdfs:label "Calendar event"^^xsd:string ;
+  rdfs:subClassOf pip:EconomicEvent ;
+.
+pip:Canada
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:CanadaEconomy ;
+  rdfs:label "Canada"^^xsd:string ;
+.
+pip:CanadaEconomy
+  rdf:type pip:Economy ;
+  pip:isGovernedBy pip:CanadaGovernment ;
+  rdfs:label "Canadian economy"^^xsd:string ;
+.
+pip:CanadaGovernment
+  rdf:type pip:Government ;
+  rdfs:label "Canada government"^^xsd:string ;
+.
+pip:China
+  rdf:type pip:Country ;
+  rdfs:label "China"^^xsd:string ;
+.
+pip:Close
+  rdf:type pip:PeriodicPrice ;
+  rdfs:label "Close, the closing price for a given period"^^xsd:string ;
+.
+pip:Commission
+  rdf:type owl:Class ;
+  rdfs:label "Commission"^^xsd:string ;
+  rdfs:subClassOf pip:Price ;
+.
+pip:CompoundResult
+  rdf:type owl:Class ;
+  rdfs:label "Indicator with component results"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:Country
+  rdf:type owl:Class ;
+  rdfs:label "Country"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+pip:CrossDirection
+  rdf:type owl:Class ;
+  rdfs:label "Cross direction"^^xsd:string ;
+  rdfs:subClassOf pip:ValuePartition ;
+.
+pip:CrossDirectionAbove
+  rdf:type pip:CrossDirection ;
+  rdfs:label "Cross direction above"^^xsd:string ;
+.
+pip:CrossDirectionBelow
+  rdf:type pip:CrossDirection ;
+  rdfs:label "Cross direction below"^^xsd:string ;
+.
+pip:Crossover
+  rdf:type owl:Class ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object pip:CrossoverResult ;
+            sp:predicate rdf:type ;
+            sp:subject _:b88026 ;
+          ]
+          [
+            sp:object [
+                sp:varName "fir"^^xsd:string ;
+              ] ;
+            sp:predicate pip:hasIndicatorResult ;
+            sp:subject _:b88026 ;
+          ]
+          [
+            sp:object [
+                sp:varName "sir"^^xsd:string ;
+              ] ;
+            sp:predicate pip:hasIndicatorResult ;
+            sp:subject _:b88026 ;
+          ]
+          [
+            sp:object [
+                sp:varName "fts"^^xsd:string ;
+              ] ;
+            sp:predicate pip:TimeStamp ;
+            sp:subject _:b88026 ;
+          ]
+          [
+            sp:object [
+                sp:varName "dir"^^xsd:string ;
+              ] ;
+            sp:predicate pip:hasCrossDirection ;
+            sp:subject _:b88026 ;
+          ]
+          [
+            sp:object spin:_this ;
+            sp:predicate pip:hasSignal ;
+            sp:subject _:b88026 ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:SubQuery ;
+            sp:query [
+                rdf:type sp:Select ;
+                sp:limit "1"^^xsd:long ;
+                sp:orderBy (
+                    [
+                      rdf:type sp:Desc ;
+                      sp:expression [
+                          sp:varName "fts"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+                sp:resultVariables (
+                    [
+                      sp:varName "fv0"^^xsd:string ;
+                    ]
+                    [
+                      sp:varName "fts"^^xsd:string ;
+                    ]
+                    [
+                      sp:varName "fir"^^xsd:string ;
+                    ]
+                  ) ;
+                sp:where (
+                    [
+                      sp:object [
+                          sp:varName "fi"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasFastIndicator ;
+                      sp:subject spin:_this ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "fir"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasIndicatorResult ;
+                      sp:subject [
+                          sp:varName "fi"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "fts"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:TimeStamp ;
+                      sp:subject [
+                          sp:varName "fir"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "fv0"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:Value ;
+                      sp:subject [
+                          sp:varName "fir"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+          [
+            rdf:type sp:SubQuery ;
+            sp:query [
+                rdf:type sp:Select ;
+                sp:limit "2"^^xsd:long ;
+                sp:orderBy (
+                    [
+                      rdf:type sp:Asc ;
+                      sp:expression [
+                          sp:varName "fts"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+                sp:resultVariables (
+                    [
+                      sp:varName "fv1"^^xsd:string ;
+                    ]
+                  ) ;
+                sp:where (
+                    [
+                      sp:object [
+                          sp:varName "fi"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasFastIndicator ;
+                      sp:subject spin:_this ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "fir"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasIndicatorResult ;
+                      sp:subject [
+                          sp:varName "fi"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "fts"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:TimeStamp ;
+                      sp:subject [
+                          sp:varName "fir"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "fv1"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:Value ;
+                      sp:subject [
+                          sp:varName "fir"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+          [
+            rdf:type sp:SubQuery ;
+            sp:query [
+                rdf:type sp:Select ;
+                sp:limit "1"^^xsd:long ;
+                sp:orderBy (
+                    [
+                      rdf:type sp:Desc ;
+                      sp:expression [
+                          sp:varName "sts"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+                sp:resultVariables (
+                    [
+                      sp:varName "sv0"^^xsd:string ;
+                    ]
+                    [
+                      sp:varName "sir"^^xsd:string ;
+                    ]
+                  ) ;
+                sp:where (
+                    [
+                      sp:object [
+                          sp:varName "si"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasSlowIndicator ;
+                      sp:subject spin:_this ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "sir"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasIndicatorResult ;
+                      sp:subject [
+                          sp:varName "si"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "sv0"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:Value ;
+                      sp:subject [
+                          sp:varName "sir"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "sts"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:TimeStamp ;
+                      sp:subject [
+                          sp:varName "sir"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+          [
+            rdf:type sp:SubQuery ;
+            sp:query [
+                rdf:type sp:Select ;
+                sp:limit "2"^^xsd:long ;
+                sp:orderBy (
+                    [
+                      rdf:type sp:Asc ;
+                      sp:expression [
+                          sp:varName "sts"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+                sp:resultVariables (
+                    [
+                      sp:varName "sv1"^^xsd:string ;
+                    ]
+                  ) ;
+                sp:where (
+                    [
+                      sp:object [
+                          sp:varName "si"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasSlowIndicator ;
+                      sp:subject spin:_this ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "sir"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:hasIndicatorResult ;
+                      sp:subject [
+                          sp:varName "si"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "sv1"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:Value ;
+                      sp:subject [
+                          sp:varName "sir"^^xsd:string ;
+                        ] ;
+                    ]
+                    [
+                      sp:object [
+                          sp:varName "sts"^^xsd:string ;
+                        ] ;
+                      sp:predicate pip:TimeStamp ;
+                      sp:subject [
+                          sp:varName "sir"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:and ;
+                sp:arg1 [
+                    rdf:type sp:gt ;
+                    sp:arg1 [
+                        sp:varName "fv0"^^xsd:string ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "sv0"^^xsd:string ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        sp:varName "fv1"^^xsd:string ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "sv1"^^xsd:string ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "crossUp"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:and ;
+                sp:arg1 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        sp:varName "fv0"^^xsd:string ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "sv0"^^xsd:string ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:gt ;
+                    sp:arg1 [
+                        sp:varName "fv1"^^xsd:string ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "sv1"^^xsd:string ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "crossDn"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    sp:varName "crossUp"^^xsd:string ;
+                  ] ;
+                sp:arg2 pip:CrossDirectionAbove ;
+                sp:arg3 [
+                    rdf:type sp:if ;
+                    sp:arg1 [
+                        sp:varName "crossDn"^^xsd:string ;
+                      ] ;
+                    sp:arg2 pip:CrossDirectionBelow ;
+                    sp:arg3 2 ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dir"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ne ;
+                sp:arg1 [
+                    sp:varName "dir"^^xsd:string ;
+                  ] ;
+                sp:arg2 2 ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Cross"^^xsd:string ;
+  rdfs:subClassOf pip:Signal ;
+.
+pip:CrossoverResult
+  rdf:type owl:Class ;
+  rdfs:label "Crossover result"^^xsd:string ;
+  rdfs:subClassOf pip:SignalResult ;
+.
+pip:CrossoverResult_1
+  rdf:type pip:CrossoverResult ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasCrossDirection pip:CrossDirectionAbove ;
+  pip:hasIndicatorResult pip:EMAResult_3 ;
+  pip:hasIndicatorResult pip:EMAResult_4 ;
+  pip:hasSignal pip:Crossover_1 ;
+  rdfs:label "Crossover result 1"^^xsd:string ;
+.
+pip:Crossover_1
+  rdf:type pip:Crossover ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasFastIndicator pip:EMA_8 ;
+  pip:hasSlowIndicator pip:EMA_34 ;
+  rdfs:label "Lines cross 1"^^xsd:string ;
+.
+pip:Currency
+  rdf:type owl:Class ;
+  rdfs:label "Currency"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+pip:D1
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 1440 ;
+  rdfs:label "D1"^^xsd:string ;
+.
+pip:EMA
+  rdf:type owl:Class ;
+  rdfs:subClassOf pip:Indicator ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:EMAPeriodSetting ;
+      owl:onProperty pip:hasIndicatorSetting ;
+    ] ;
+.
+pip:EMAPeriodSetting
+  rdf:type owl:Class ;
+  rdfs:label "EMAPeriod setting"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:EMAPeriodSetting_34
+  rdf:type pip:EMAPeriodSetting ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:period 34 ;
+  rdfs:label "EMAPeriod setting 34"^^xsd:string ;
+.
+pip:EMAPeriodSetting_8
+  rdf:type pip:EMAPeriodSetting ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:period 8 ;
+  rdfs:label "EMAPeriod setting 8"^^xsd:string ;
+.
+pip:EMAResult
+  rdf:type owl:Class ;
+  rdfs:label "EMAResult"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:EMAResult_1
+  rdf:type pip:EMAResult ;
+  pip:TimeStamp "2015-10-13T10:04:31.702"^^xsd:dateTime ;
+  pip:Value "2.0"^^xsd:float ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  rdfs:label "EMAResult 1"^^xsd:string ;
+.
+pip:EMAResult_2
+  rdf:type pip:EMAResult ;
+  pip:TimeStamp "2015-10-13T10:04:31.702"^^xsd:dateTime ;
+  pip:Value "1.1"^^xsd:float ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  rdfs:label "EMAResult 2"^^xsd:string ;
+.
+pip:EMAResult_3
+  rdf:type pip:EMAResult ;
+  pip:TimeStamp "2015-10-13T10:59:50.167"^^xsd:dateTime ;
+  pip:Value "2.2"^^xsd:float ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  rdfs:label "EMAResult 3"^^xsd:string ;
+.
+pip:EMAResult_4
+  rdf:type pip:EMAResult ;
+  pip:TimeStamp "2015-10-13T11:00:10.45"^^xsd:dateTime ;
+  pip:Value "1.0"^^xsd:float ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  rdfs:label "EMAResult 4"^^xsd:string ;
+.
+pip:EMA_34
+  rdf:type pip:EMA ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasIndicatorResult pip:EMAResult_2 ;
+  pip:hasIndicatorResult pip:EMAResult_3 ;
+  pip:hasIndicatorSetting pip:EMAPeriodSetting_34 ;
+  pip:hasInstrument pip:AUDJPY_1 ;
+  pip:hasTimeFrame pip:m15 ;
+  rdfs:label "EMA 34"^^xsd:string ;
+.
+pip:EMA_8
+  rdf:type pip:EMA ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasIndicatorResult pip:EMAResult_1 ;
+  pip:hasIndicatorResult pip:EMAResult_4 ;
+  pip:hasIndicatorSetting pip:EMAPeriodSetting_8 ;
+  pip:hasInstrument pip:AUDJPY_1 ;
+  pip:hasTimeFrame pip:m15 ;
+  rdfs:label "EMA 8"^^xsd:string ;
+.
+pip:EUR
+  rdf:type owl:Class ;
+  rdfs:label "EUR"^^xsd:string ;
+  rdfs:subClassOf pip:Currency ;
+.
+pip:EURAUD
+  rdf:type owl:Class ;
+  rdfs:label "EUR/AUD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:AUD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:EUR ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+.
+pip:EURAUD_1
+  rdf:type pip:EURAUD ;
+  pip:baseCurrency pip:EUR_1 ;
+  pip:quoteCurrency pip:AUD_1 ;
+  rdfs:label "EURAUD 1"^^xsd:string ;
+.
+pip:EURCAD
+  rdf:type owl:Class ;
+  rdfs:label "EUR/CAD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:CAD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:EUR ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+.
+pip:EURCAD_1
+  rdf:type pip:EURCAD ;
+  pip:baseCurrency pip:EUR_1 ;
+  pip:quoteCurrency pip:CAD_1 ;
+  rdfs:label "EURCAD 1"^^xsd:string ;
+.
+pip:EURGBP
+  rdf:type owl:Class ;
+  rdfs:label "EUR/GBP"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:EUR ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:GBP ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:EURGBP_1
+  rdf:type pip:EURGBP ;
+  pip:baseCurrency pip:EUR_1 ;
+  pip:quoteCurrency pip:GBP_1 ;
+  rdfs:label "EURGBP 1"^^xsd:string ;
+.
+pip:EURJPY
+  rdf:type owl:Class ;
+  rdfs:label "EUR/JPY"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:EUR ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:JPY ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:EURJPY_1
+  rdf:type pip:EURJPY ;
+  pip:baseCurrency pip:EUR_1 ;
+  pip:quoteCurrency pip:JPY_1 ;
+  rdfs:label "EURJPY 1"^^xsd:string ;
+.
+pip:EURUSD
+  rdf:type owl:Class ;
+  rdfs:label "EUR/USD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:EUR ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:USD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:EURUSD_1
+  rdf:type pip:EURUSD ;
+  pip:baseCurrency pip:EUR_1 ;
+  pip:quoteCurrency pip:USD_1 ;
+  rdfs:label "EURUSD 1"^^xsd:string ;
+.
+pip:EUR_1
+  rdf:type pip:EUR ;
+  pip:base "euro"^^xsd:string ;
+  rdfs:label "EUR 1"^^xsd:string ;
+.
+pip:EconomicEvent
+  rdf:type owl:Class ;
+  rdfs:label "Economic event"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+pip:Economy
+  rdf:type owl:Class ;
+  rdfs:label "Economy"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+pip:EstimatedEconomicImpact
+  rdf:type owl:Class ;
+  rdfs:label "Estimated economic impact (scale and valence)"^^xsd:string ;
+  rdfs:label """The effect that an event, policy change, or market trend will have on economic factors such as interest rates, consumer confidence, stock market activity, or unemployment. Events such as regulatory changes, supply shortages or natural disasters can have a significant economic impact due to the way that they affect business activities.
+
+Read more: http://www.investorwords.com/16388/economic_impact.html#ixzz3nbJlYjC8"""^^xsd:string ;
+  rdfs:subClassOf pip:ValuePartition ;
+.
+pip:EuropeanUnionEconomy
+  rdf:type pip:Economy ;
+  pip:isGovernedBy pip:EuropeanUnionGovernment ;
+  rdfs:label "Euro economy"^^xsd:string ;
+.
+pip:EuropeanUnionGovernment
+  rdf:type pip:Government ;
+  rdfs:label "Euro government"^^xsd:string ;
+.
+pip:France
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:EuropeanUnionEconomy ;
+  rdfs:label "France"^^xsd:string ;
+.
+pip:FundamentalAnalysis
+  rdf:type owl:Class ;
+  rdfs:label "Fundamental analysis"^^xsd:string ;
+  rdfs:subClassOf pip:forex ;
+.
+pip:GBP
+  rdf:type owl:Class ;
+  rdfs:label "GBP"^^xsd:string ;
+  rdfs:subClassOf pip:Currency ;
+.
+pip:GBPAUD
+  rdf:type owl:Class ;
+  rdfs:label "GBP/AUD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:AUD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:GBP ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+.
+pip:GBPAUD_1
+  rdf:type pip:GBPAUD ;
+  pip:baseCurrency pip:GBP_1 ;
+  pip:quoteCurrency pip:AUD_1 ;
+  rdfs:label "GBPAUD 1"^^xsd:string ;
+.
+pip:GBPCAD
+  rdf:type owl:Class ;
+  rdfs:label "GBP/CAD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:CAD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:GBP ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+.
+pip:GBPCAD_1
+  rdf:type pip:GBPCAD ;
+  pip:baseCurrency pip:GBP_1 ;
+  pip:quoteCurrency pip:CAD_1 ;
+  rdfs:label "GBPCAD 1"^^xsd:string ;
+.
+pip:GBPJPY
+  rdf:type owl:Class ;
+  rdfs:label "GBP/JPY"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:GBP ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:JPY ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:GBPJPY_1
+  rdf:type pip:GBPJPY ;
+  pip:baseCurrency pip:GBP_1 ;
+  pip:quoteCurrency pip:JPY_1 ;
+  rdfs:label "GBPJPY 1"^^xsd:string ;
+.
+pip:GBPNZD
+  rdf:type owl:Class ;
+  rdfs:label "GBP/NZD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:GBP ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:NZD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:GBPNZD_1
+  rdf:type pip:GBPNZD ;
+  pip:baseCurrency pip:GBP_1 ;
+  pip:quoteCurrency pip:NZD_1 ;
+  rdfs:label "GBPNZD 1"^^xsd:string ;
+.
+pip:GBPUSD
+  rdf:type owl:Class ;
+  rdfs:label "GBP/USD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:GBP ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:USD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:GBPUSD_1
+  rdf:type pip:GBPUSD ;
+  pip:baseCurrency pip:GBP_1 ;
+  pip:quoteCurrency pip:USD_1 ;
+  rdfs:label "GBPUSD 1"^^xsd:string ;
+.
+pip:GBP_1
+  rdf:type pip:GBP ;
+  pip:base "pound"^^xsd:string ;
+  rdfs:label "GBP 1"^^xsd:string ;
+.
+pip:Germany
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:EuropeanUnionEconomy ;
+  rdfs:label "Germany"^^xsd:string ;
+.
+pip:Government
+  rdf:type owl:Class ;
+  rdfs:label "Government"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+pip:Greece
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:EuropeanUnionEconomy ;
+  rdfs:label "Greece"^^xsd:string ;
+.
+pip:H1
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 60 ;
+  rdfs:label "H1"^^xsd:string ;
+.
+pip:H4
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 240 ;
+  rdfs:label "H4"^^xsd:string ;
+.
+pip:High
+  rdf:type pip:PeriodicPrice ;
+  rdfs:label "High, the highest price in a given period"^^xsd:string ;
+.
+pip:HighImportance
+  rdf:type pip:Importance ;
+  rdfs:label "High importance"^^xsd:string ;
+.
+pip:Importance
+  rdf:type owl:Class ;
+  rdfs:label "Importance"^^xsd:string ;
+  rdfs:subClassOf pip:ValuePartition ;
+.
+pip:Indicator
+  rdf:type owl:Class ;
+  rdfs:subClassOf pip:IndicatorAnalysis ;
+.
+pip:IndicatorAnalysis
+  rdf:type owl:Class ;
+  rdfs:label "Indicator analysis"^^xsd:string ;
+  rdfs:subClassOf pip:TechnicalAnalysis ;
+.
+pip:IndicatorBasedStrategy
+  rdf:type owl:Class ;
+  rdfs:label "Indicator based strategy"^^xsd:string ;
+  rdfs:subClassOf pip:Strategy ;
+.
+pip:IndicatorBasedStrategy_1
+  rdf:type pip:IndicatorBasedStrategy ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasSetup pip:Setup_1 ;
+  pip:hasTrade pip:Trade_1 ;
+  rdfs:label "Indicator based strategy using price, EMA 8 and EMA 34 in trending market"^^xsd:string ;
+.
+pip:IndicatorResult
+  rdf:type owl:Class ;
+  rdfs:label "Indicator result"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorAnalysis ;
+.
+pip:IndicatorSetting
+  rdf:type owl:Class ;
+  rdfs:label "Indicator setting"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorAnalysis ;
+.
+pip:Instrument
+  rdf:type owl:Class ;
+  rdfs:label "Instrument or pair"^^xsd:string ;
+  rdfs:subClassOf pip:forex ;
+.
+pip:JPY
+  rdf:type owl:Class ;
+  rdfs:label "JPY"^^xsd:string ;
+  rdfs:subClassOf pip:Currency ;
+.
+pip:JPY_1
+  rdf:type pip:JPY ;
+  pip:base "yen"^^xsd:string ;
+  rdfs:label "JPY 1"^^xsd:string ;
+.
+pip:Japan
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:JapanEconomy ;
+  rdfs:label "Japan"^^xsd:string ;
+.
+pip:JapanEconomy
+  rdf:type pip:Economy ;
+  pip:isGovernedBy pip:JapanGovernment ;
+  rdfs:label "Japan economy"^^xsd:string ;
+.
+pip:JapanGovernment
+  rdf:type pip:Government ;
+  rdfs:label "Japan government"^^xsd:string ;
+.
+pip:LargeAdverse
+  rdf:type pip:EstimatedEconomicImpact ;
+  rdfs:label "Large adverse"^^xsd:string ;
+.
+pip:LargeBeneficial
+  rdf:type pip:EstimatedEconomicImpact ;
+  rdfs:label "Large beneficial"^^xsd:string ;
+.
+pip:Last
+  rdf:type pip:PeriodicPrice ;
+  rdfs:label "Last, the last price received regardless of period"^^xsd:string ;
+.
+pip:Low
+  rdf:type pip:PeriodicPrice ;
+  rdfs:label "Low, the lowest price in a given period"^^xsd:string ;
+.
+pip:LowImportance
+  rdf:type pip:Importance ;
+  rdfs:label "Low importance"^^xsd:string ;
+.
+pip:MACD
+  rdf:type owl:Class ;
+  rdfs:label "MACD"^^xsd:string ;
+  rdfs:subClassOf pip:Indicator ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          [
+            rdf:type owl:Restriction ;
+            owl:allValuesFrom pip:MACDPeriodSetting_Histogram ;
+            owl:onProperty pip:hasIndicatorSetting ;
+          ]
+          pip:MACDPeriodSetting_MACD
+          pip:MACDPeriodSetting_Signal
+        ) ;
+    ] ;
+.
+pip:MACDPeriodSetting_Histogram
+  rdf:type owl:Class ;
+  rdfs:label "MACDPeriod setting Histogram"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:MACDPeriodSetting_MACD
+  rdf:type owl:Class ;
+  rdfs:label "MACDPeriod setting MACD"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:MACDPeriodSetting_Signal
+  rdf:type owl:Class ;
+  rdfs:label "MACDPeriod setting Signal"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:MACDResult
+  rdf:type owl:Class ;
+  rdfs:label "MACDResult"^^xsd:string ;
+  rdfs:subClassOf pip:CompoundResult ;
+.
+pip:MACDResult_Histogram
+  rdf:type owl:Class ;
+  rdfs:label "MACDResult Histogram"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:MACDResult_MACD
+  rdf:type owl:Class ;
+  rdfs:label "MACDResult MACD"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:MACDResult_Signal
+  rdf:type owl:Class ;
+  rdfs:label "MACDResult Signal"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:MarketEntry
+  rdf:type owl:Class ;
+  rdfs:label "Market entry"^^xsd:string ;
+  rdfs:subClassOf pip:ValuePartition ;
+.
+pip:MarketEntryBuy
+  rdf:type pip:MarketEntry ;
+  rdfs:label "Market entry buy"^^xsd:string ;
+.
+pip:MarketEntrySell
+  rdf:type pip:MarketEntry ;
+  rdfs:label "Market entry sell"^^xsd:string ;
+.
+pip:MediumImportance
+  rdf:type pip:Importance ;
+  rdfs:label "Medium importance"^^xsd:string ;
+.
+pip:NZD
+  rdf:type owl:Class ;
+  rdfs:label "NZD"^^xsd:string ;
+  rdfs:subClassOf pip:Currency ;
+.
+pip:NZDJPY
+  rdf:type owl:Class ;
+  rdfs:label "NZD/JPY"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:JPY ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:NZD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+.
+pip:NZDJPY_1
+  rdf:type pip:NZDJPY ;
+  pip:baseCurrency pip:NZD_1 ;
+  pip:quoteCurrency pip:JPY_1 ;
+  rdfs:label "NZDJPY 1"^^xsd:string ;
+.
+pip:NZDUSD
+  rdf:type owl:Class ;
+  rdfs:label "NZD/USD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:NZD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:USD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+.
+pip:NZDUSD_1
+  rdf:type pip:NZDUSD ;
+  pip:baseCurrency pip:NZD_1 ;
+  pip:quoteCurrency pip:USD_1 ;
+  rdfs:label "NZDUSD 1"^^xsd:string ;
+.
+pip:NZD_1
+  rdf:type pip:NZD ;
+  pip:base "dollar"^^xsd:string ;
+  rdfs:label "NZD 1"^^xsd:string ;
+.
+pip:NewZealand
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:NewZealandEconomy ;
+  rdfs:label "New zealand"^^xsd:string ;
+.
+pip:NewZealandEconomy
+  rdf:type pip:Economy ;
+  pip:isGovernedBy pip:NewZealandGovernment ;
+  rdfs:label "New zealand economy"^^xsd:string ;
+.
+pip:NewZealandGovernment
+  rdf:type pip:Government ;
+  rdfs:label "New zealand government"^^xsd:string ;
+.
+pip:NewsEvent
+  rdf:type owl:Class ;
+  rdfs:comment "An influential event typically within the scope of a given economy"^^xsd:string ;
+  rdfs:label "News event"^^xsd:string ;
+  rdfs:subClassOf pip:EconomicEvent ;
+.
+pip:Open
+  rdf:type pip:PeriodicPrice ;
+  rdfs:label "Open, the initial price within a given period"^^xsd:string ;
+.
+pip:PeriodSetting
+  rdf:type owl:Class ;
+  rdfs:label "MASetting"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorSetting ;
+.
+pip:PeriodicPrice
+  rdf:type owl:Class ;
+  rdfs:label "Periodic price"^^xsd:string ;
+  rdfs:subClassOf pip:ValuePartition ;
+.
+pip:Pip
+  rdf:type owl:Class ;
+  rdfs:label "Pip"^^xsd:string ;
+  rdfs:subClassOf pip:Price ;
+.
+pip:Position
+  rdf:type owl:Class ;
+  rdfs:label "Position"^^xsd:string ;
+  rdfs:subClassOf pip:ValuePartition ;
+.
+pip:PositionLong
+  rdf:type pip:Position ;
+  rdfs:label "Position long"^^xsd:string ;
+.
+pip:PositionShort
+  rdf:type pip:Position ;
+  rdfs:label "Position short"^^xsd:string ;
+.
+pip:Price
+  rdf:type owl:Class ;
+  rdfs:label "Price"^^xsd:string ;
+  rdfs:subClassOf pip:forex ;
+.
+pip:PriceAction
+  rdf:type owl:Class ;
+  rdfs:label "Price action"^^xsd:string ;
+  rdfs:subClassOf pip:TechnicalAnalysis ;
+.
+pip:RSI
+  rdf:type owl:Class ;
+  rdfs:subClassOf pip:Indicator ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:RSIPeriodSetting ;
+      owl:onProperty pip:hasIndicatorSetting ;
+    ] ;
+.
+pip:RSIPeriodSetting
+  rdf:type owl:Class ;
+  rdfs:label "RSIPeriod setting"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:RSIResult
+  rdf:type owl:Class ;
+  rdfs:label "RSIResult"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:Resistance
+  rdf:type owl:Class ;
+  rdfs:label "Resistance"^^xsd:string ;
+  rdfs:subClassOf pip:PriceAction ;
+.
+pip:SMA
+  rdf:type owl:Class ;
+  rdfs:subClassOf pip:Indicator ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:SMAPeriodSetting ;
+      owl:onProperty pip:hasIndicatorSetting ;
+    ] ;
+.
+pip:SMAPeriodSetting
+  rdf:type owl:Class ;
+  rdfs:label "SMAPeriod setting"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:SMAResult
+  rdf:type owl:Class ;
+  rdfs:label "SMAResult"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:SSD
+  rdf:type owl:Class ;
+  rdfs:subClassOf pip:Indicator ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          [
+            rdf:type owl:Restriction ;
+            owl:allValuesFrom pip:SSDPeriodSetting_MA ;
+            owl:onProperty pip:hasIndicatorSetting ;
+          ]
+          pip:SSDPeriodSetting_MAMA
+          pip:SSDPeriodSetting_Raw
+        ) ;
+    ] ;
+.
+pip:SSDPeriodSetting_MA
+  rdf:type owl:Class ;
+  rdfs:label "SSDPeriod setting MA"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:SSDPeriodSetting_MAMA
+  rdf:type owl:Class ;
+  rdfs:label "SSDPeriod setting MAMA"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:SSDPeriodSetting_Raw
+  rdf:type owl:Class ;
+  rdfs:label "SSDPeriod setting Raw"^^xsd:string ;
+  rdfs:subClassOf pip:PeriodSetting ;
+.
+pip:SSDResult
+  rdf:type owl:Class ;
+  rdfs:label "SSDResult"^^xsd:string ;
+  rdfs:subClassOf pip:CompoundResult ;
+.
+pip:SSDResult_D
+  rdf:type owl:Class ;
+  rdfs:label "SSDResult D"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:SSDResult_K
+  rdf:type owl:Class ;
+  rdfs:label "SSDResult K"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorResult ;
+.
+pip:SSD_1
+  rdf:type pip:SSD ;
+.
+pip:Setup
+  rdf:type owl:Class ;
+  rdfs:label "Setup"^^xsd:string ;
+  rdfs:subClassOf pip:Trading ;
+.
+pip:Setup_1
+  rdf:type pip:Setup ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasTrigger pip:Trigger_1 ;
+  rdfs:label "Setup 1"^^xsd:string ;
+.
+pip:Signal
+  rdf:type owl:Class ;
+  rdfs:label "Signals"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorAnalysis ;
+.
+pip:SignalResult
+  rdf:type owl:Class ;
+  spin:constructor [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object "a Signal result" ;
+            sp:predicate rdfs:label ;
+            sp:subject spin:_this ;
+          ]
+        ) ;
+      sp:where () ;
+    ] ;
+  rdfs:label "Signal result"^^xsd:string ;
+  rdfs:subClassOf pip:IndicatorAnalysis ;
+.
+pip:SmallAdverse
+  rdf:type pip:EstimatedEconomicImpact ;
+  rdfs:label "Small adverse"^^xsd:string ;
+.
+pip:SmallBeneficial
+  rdf:type pip:EstimatedEconomicImpact ;
+  rdfs:label "Small beneficial"^^xsd:string ;
+.
+pip:Spread
+  rdf:type owl:Class ;
+  rdfs:label "Spread"^^xsd:string ;
+  rdfs:subClassOf pip:Price ;
+.
+pip:Strategy
+  rdf:type owl:Class ;
+  rdfs:label "Strategy"^^xsd:string ;
+  rdfs:subClassOf pip:Trading ;
+.
+pip:Support
+  rdf:type owl:Class ;
+  rdfs:label "Support"^^xsd:string ;
+  rdfs:subClassOf pip:PriceAction ;
+.
+pip:TechnicalAnalysis
+  rdf:type owl:Class ;
+  rdfs:subClassOf pip:forex ;
+.
+pip:ThresholdCross
+  rdf:type owl:Class ;
+  rdfs:label "Threshold cross"^^xsd:string ;
+  rdfs:subClassOf pip:Signal ;
+.
+pip:Tick
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 0 ;
+  rdfs:comment "The period of time between consecutive changes in price of an instrument.  A tick-level view of price contains all the price detail within a timeframe."^^xsd:string ;
+  rdfs:label "Tick"^^xsd:string ;
+.
+pip:TimeFrame
+  rdf:type owl:Class ;
+  rdfs:label "Time frame"^^xsd:string ;
+  rdfs:subClassOf pip:ValuePartition ;
+.
+pip:TimeSpanMinutes
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The timespan is a measure of a TimeFrame in minutes"^^xsd:string ;
+  rdfs:domain pip:TimeFrame ;
+  rdfs:label "Datatype property 1"^^xsd:string ;
+  rdfs:range xsd:integer ;
+.
+pip:TimeStamp
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          pip:IndicatorResult
+          pip:SignalResult
+        ) ;
+    ] ;
+  rdfs:label "Time stamp"^^xsd:string ;
+  rdfs:range xsd:dateTime ;
+.
+pip:Trade
+  rdf:type owl:Class ;
+  rdfs:label "Trade"^^xsd:string ;
+  rdfs:subClassOf pip:Trading ;
+.
+pip:Trade_1
+  rdf:type pip:Trade ;
+  pip:amount 1000 ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasInstrument pip:AUDJPY_1 ;
+  pip:hasPosition pip:PositionLong ;
+  rdfs:label "Trade 1"^^xsd:string ;
+.
+pip:Trading
+  rdf:type owl:Class ;
+  rdfs:label "Trading"^^xsd:string ;
+  rdfs:subClassOf pip:forex ;
+.
+pip:Trigger
+  rdf:type owl:Class ;
+  rdfs:label "Trigger"^^xsd:string ;
+  rdfs:subClassOf pip:Trading ;
+.
+pip:Trigger_1
+  rdf:type pip:Trigger ;
+  pip:graphTag [
+      rdf:type owl:Thing ;
+    ] ;
+  pip:hasMarketEntry pip:MarketEntryBuy ;
+  pip:hasSignal pip:Crossover_1 ;
+  rdfs:label "Trigger 1"^^xsd:string ;
+.
+pip:UKEconomy
+  rdf:type pip:Economy ;
+  pip:isGovernedBy pip:UKGovernment ;
+  rdfs:label "UKEconomy"^^xsd:string ;
+.
+pip:UKGovernment
+  rdf:type pip:Government ;
+  rdfs:label "UKGovernment"^^xsd:string ;
+.
+pip:USD
+  rdf:type owl:Class ;
+  rdfs:label "USD"^^xsd:string ;
+  rdfs:subClassOf pip:Currency ;
+.
+pip:USDCAD
+  rdf:type owl:Class ;
+  rdfs:label "USD/CAD"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:CAD ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:USD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+.
+pip:USDCAD_1
+  rdf:type pip:USDCAD ;
+  pip:baseCurrency pip:USD_1 ;
+  pip:quoteCurrency pip:CAD_1 ;
+  rdfs:label "USDCAD 1"^^xsd:string ;
+.
+pip:USDJPY
+  rdf:type owl:Class ;
+  rdfs:label "USD/JPY"^^xsd:string ;
+  rdfs:subClassOf pip:Instrument ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:JPY ;
+      owl:onProperty pip:quoteCurrency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom pip:USD ;
+      owl:onProperty pip:baseCurrency ;
+    ] ;
+.
+pip:USDJPY_1
+  rdf:type pip:USDJPY ;
+  pip:baseCurrency pip:USD_1 ;
+  pip:quoteCurrency pip:JPY_1 ;
+  rdfs:label "USDJPY 1"^^xsd:string ;
+.
+pip:USD_1
+  rdf:type pip:USD ;
+  pip:base "dollar"^^xsd:string ;
+  rdfs:label "USD 1"^^xsd:string ;
+.
+pip:USEconomy
+  rdf:type pip:Economy ;
+  pip:isGovernedBy pip:USGovernment ;
+  rdfs:label "USEconomy"^^xsd:string ;
+.
+pip:USGovernment
+  rdf:type pip:Government ;
+  rdfs:label "USGovernment"^^xsd:string ;
+.
+pip:UnitedKingdom
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:UKEconomy ;
+  rdfs:label "United Kingdom"^^xsd:string ;
+.
+pip:UnitedStates
+  rdf:type pip:Country ;
+  pip:economicParticipantIn pip:USEconomy ;
+  rdfs:label "United states"^^xsd:string ;
+.
+pip:Value
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pip:IndicatorResult ;
+  rdfs:label "Value"^^xsd:string ;
+  rdfs:range xsd:float ;
+.
+pip:ValuePartition
+  rdf:type owl:Class ;
+  rdfs:label "Value type"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+pip:amount
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pip:Trade ;
+  rdfs:label "amount"^^xsd:string ;
+  rdfs:range xsd:integer ;
+.
+pip:base
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pip:Currency ;
+  rdfs:label "base"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+pip:baseCurrency
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Instrument ;
+  rdfs:label "base currency"^^xsd:string ;
+  rdfs:range pip:Currency ;
+.
+pip:economicParticipantIn
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Country ;
+  rdfs:label "member of"^^xsd:string ;
+  rdfs:range pip:Economy ;
+.
+pip:forEconomy
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          pip:NewsEvent
+          pip:EconomicEvent
+        ) ;
+    ] ;
+  rdfs:label "for economy"^^xsd:string ;
+  rdfs:range pip:Economy ;
+.
+pip:forex
+  rdf:type owl:Class ;
+  rdfs:comment "Forex is an asset class and a type of market.  Specifically, exchange rates for currency pairs are the financial instrument and the forex market is the international banking network"^^xsd:string ;
+  rdfs:comment "forex is the root of the domain model for the forex-modeling ontology"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:versionInfo "1.0.0.0"^^xsd:string ;
+.
+pip:graphTag
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          pip:IndicatorAnalysis
+          pip:Trading
+          pip:ValuePartition
+        ) ;
+    ] ;
+  rdfs:label "graph tag"^^xsd:string ;
+  rdfs:range owl:Thing ;
+.
+pip:hasComponentResult
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:CompoundResult ;
+  rdfs:label "has component result"^^xsd:string ;
+  rdfs:range pip:IndicatorResult ;
+.
+pip:hasCrossDirection
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:CrossoverResult ;
+  rdfs:label "has cross direction"^^xsd:string ;
+  rdfs:range pip:CrossDirection ;
+.
+pip:hasFastIndicator
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Crossover ;
+  rdfs:label "has fast indicator"^^xsd:string ;
+  rdfs:subPropertyOf pip:hasIndicator ;
+.
+pip:hasImportance
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:CalendarEvent ;
+  rdfs:label "has importance"^^xsd:string ;
+  rdfs:range pip:Importance ;
+.
+pip:hasIndicator
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:IndicatorBasedStrategy ;
+  rdfs:label "has indicator"^^xsd:string ;
+.
+pip:hasIndicatorResult
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          pip:Indicator
+          pip:SignalResult
+        ) ;
+    ] ;
+  rdfs:label "has indicator result"^^xsd:string ;
+  rdfs:range pip:IndicatorResult ;
+.
+pip:hasIndicatorSetting
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Indicator ;
+  rdfs:label "has indicator setting"^^xsd:string ;
+  rdfs:range pip:IndicatorSetting ;
+.
+pip:hasInstrument
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          pip:Indicator
+          pip:Trade
+        ) ;
+    ] ;
+  rdfs:label "has instrument"^^xsd:string ;
+  rdfs:range pip:Instrument ;
+.
+pip:hasMarketEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Trigger ;
+  rdfs:label "has market entry"^^xsd:string ;
+  rdfs:range pip:MarketEntry ;
+.
+pip:hasPeriodSetting
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has MASetting"^^xsd:string ;
+  rdfs:range pip:PeriodSetting ;
+.
+pip:hasPeriodicPrice
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Price ;
+  rdfs:label "has periodic price"^^xsd:string ;
+.
+pip:hasPosition
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Trade ;
+  rdfs:label "has position"^^xsd:string ;
+  rdfs:range pip:Position ;
+.
+pip:hasSetup
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Strategy ;
+  rdfs:label "has setup"^^xsd:string ;
+  rdfs:range pip:Setup ;
+.
+pip:hasSignal
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          pip:Trigger
+          pip:SignalResult
+        ) ;
+    ] ;
+  rdfs:label "has signal"^^xsd:string ;
+  rdfs:range pip:Signal ;
+.
+pip:hasSlowIndicator
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Crossover ;
+  rdfs:label "has slow indicator"^^xsd:string ;
+  rdfs:subPropertyOf pip:hasIndicator ;
+.
+pip:hasTimeFrame
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Indicator ;
+  rdfs:label "has time frame"^^xsd:string ;
+  rdfs:range pip:TimeFrame ;
+.
+pip:hasTrade
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Strategy ;
+  rdfs:label "has trade"^^xsd:string ;
+  rdfs:range pip:Trade ;
+.
+pip:hasTrigger
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Setup ;
+  rdfs:label "has trigger"^^xsd:string ;
+  rdfs:range pip:Trigger ;
+.
+pip:isGovernedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Economy ;
+  rdfs:label "is governed by"^^xsd:string ;
+  rdfs:range pip:Government ;
+.
+pip:issues
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Government ;
+  rdfs:label "issues"^^xsd:string ;
+  rdfs:range pip:Currency ;
+.
+pip:m1
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 1 ;
+  rdfs:label "m1"^^xsd:string ;
+.
+pip:m15
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 15 ;
+  rdfs:label "m15"^^xsd:string ;
+.
+pip:m30
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 30 ;
+  rdfs:label "m30"^^xsd:string ;
+.
+pip:m5
+  rdf:type pip:TimeFrame ;
+  pip:TimeSpanMinutes 5 ;
+  rdfs:label "m5"^^xsd:string ;
+.
+pip:occurred
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pip:NewsEvent ;
+  rdfs:label "occurred"^^xsd:string ;
+  rdfs:range xsd:dateTime ;
+.
+pip:period
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pip:PeriodSetting ;
+  rdfs:label "period"^^xsd:string ;
+  rdfs:range xsd:integer ;
+.
+pip:quoteCurrency
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain pip:Instrument ;
+  rdfs:label "quote currency"^^xsd:string ;
+  rdfs:range pip:Currency ;
+.
+pip:scheduledFor
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain pip:CalendarEvent ;
+  rdfs:label "scheduled for"^^xsd:string ;
+  rdfs:range xsd:dateTime ;
+.
+rdfs:comment
+  rdfs:subPropertyOf rdfs:label ;
+.

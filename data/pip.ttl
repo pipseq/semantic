@@ -1,0 +1,2531 @@
+@prefix :        <http://pipseq.org#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pip:     <http://pipseq.org#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+pip:FundamentalAnalysis
+      a       owl:Class ;
+      rdfs:label "Fundamental analysis"^^xsd:string ;
+      rdfs:subClassOf pip:forex .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9d>
+      a       pip:EMAResult ;
+      pip:Value "89.4891056032874" ;
+      pip:timeStamp "2015-10-19T14:06:18.235Z" .
+
+pip:SSDResult
+      a       owl:Class ;
+      rdfs:label "SSDResult"^^xsd:string ;
+      rdfs:subClassOf pip:CompoundResult .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eef>
+      a       pip:EMAResult ;
+      pip:Value "89.3799638117558" ;
+      pip:timeStamp "2015-10-19T14:06:18.894Z" .
+
+pip:hasTimeFrame
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Indicator ;
+      rdfs:label "has time frame"^^xsd:string ;
+      rdfs:range pip:TimeFrame .
+
+pip:CompoundResult
+      a       owl:Class ;
+      rdfs:label "Indicator with component results"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+pip:SSDPeriodSetting_MAMA
+      a       owl:Class ;
+      rdfs:label "SSDPeriod setting MAMA"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edf>
+      a       pip:EMAResult ;
+      pip:Value "89.2388639677834" ;
+      pip:timeStamp "2015-10-19T14:06:18.985Z" .
+
+pip:Price
+      a       owl:Class ;
+      rdfs:label "Price"^^xsd:string ;
+      rdfs:subClassOf pip:forex .
+
+pip:SMAPeriodSetting
+      a       owl:Class ;
+      rdfs:label "SMAPeriod setting"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+pip:EURAUD
+      a       owl:Class ;
+      rdfs:label "EUR/AUD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:AUD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:EUR ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+pip:EuropeanUnionGovernment
+      a       pip:Government ;
+      rdfs:label "Euro government"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9c>
+      a       pip:EMAResult ;
+      pip:Value "89.5521603072121" ;
+      pip:timeStamp "2015-10-19T14:06:18.235Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eee>
+      a       pip:EMAResult ;
+      pip:Value "89.4725496292502" ;
+      pip:timeStamp "2015-10-19T14:06:18.894Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ede>
+      a       pip:EMAResult ;
+      pip:Value "89.3901851903001" ;
+      pip:timeStamp "2015-10-19T14:06:18.985Z" .
+
+<http://pipseq.org#CrossoverResult_49006b60.150806c0ecc.-7f3d>
+      a       pip:CrossoverResult ;
+      pip:hasCrossDirection
+              pip:CrossDirectionBelow ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3f> ;
+      pip:hasSignal "Crossover_1" ;
+      pip:timeStamp "2015-10-19T14:06:18.542Z" .
+
+pip:Signal
+      a       owl:Class ;
+      rdfs:label "Signals"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorAnalysis .
+
+pip:forEconomy
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (pip:NewsEvent pip:EconomicEvent)
+              ] ;
+      rdfs:label "for economy"^^xsd:string ;
+      rdfs:range pip:Economy .
+
+pip:LargeBeneficial
+      a       pip:EstimatedEconomicImpact ;
+      rdfs:label "Large beneficial"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3b>
+      a       pip:EMAResult ;
+      pip:Value "89.5722985815139" ;
+      pip:timeStamp "2015-10-19T14:06:18.545Z" .
+
+pip:CAD
+      a       owl:Class ;
+      rdfs:label "CAD"^^xsd:string ;
+      rdfs:subClassOf pip:Currency .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edd>
+      a       pip:EMAResult ;
+      pip:Value "89.2392941679635" ;
+      pip:timeStamp "2015-10-19T14:06:18.997Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9f>
+      a       pip:EMAResult ;
+      pip:Value "89.4908207032598" ;
+      pip:timeStamp "2015-10-19T14:06:18.22Z" .
+
+pip:MarketEntrySell
+      a       pip:MarketEntry ;
+      rdfs:label "Market entry sell"^^xsd:string .
+
+pip:GBPUSD_1
+      a       pip:GBPUSD ;
+      rdfs:label "GBPUSD 1"^^xsd:string ;
+      pip:baseCurrency pip:GBP_1 ;
+      pip:quoteCurrency pip:USD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1a>
+      a       pip:EMAResult ;
+      pip:Value "89.5329122873" ;
+      pip:timeStamp "2015-10-19T14:06:18.69Z" .
+
+pip:hasIndicatorSetting
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Indicator ;
+      rdfs:label "has indicator setting"^^xsd:string ;
+      rdfs:range pip:IndicatorSetting .
+
+pip:UnitedKingdom
+      a       pip:Country ;
+      rdfs:label "United Kingdom"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:UKEconomy .
+
+pip:EMAResult_1
+      a       pip:EMAResult ;
+      rdfs:label "EMAResult 1"^^xsd:string ;
+      pip:TimeStamp "2015-10-13T10:04:31.702"^^xsd:dateTime ;
+      pip:Value "1.0"^^xsd:float ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] .
+
+pip:USGovernment
+      a       pip:Government ;
+      rdfs:label "USGovernment"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5b>
+      a       pip:EMAResult ;
+      pip:Value "89.5559575519411" ;
+      pip:timeStamp "2015-10-19T14:06:18.426Z" .
+
+pip:EURJPY_1
+      a       pip:EURJPY ;
+      rdfs:label "EURJPY 1"^^xsd:string ;
+      pip:baseCurrency pip:EUR_1 ;
+      pip:quoteCurrency pip:JPY_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3a>
+      a       pip:EMAResult ;
+      pip:Value "89.5471424785526" ;
+      pip:timeStamp "2015-10-19T14:06:18.553Z" .
+
+pip:quoteCurrency
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Instrument ;
+      rdfs:label "quote currency"^^xsd:string ;
+      rdfs:range pip:Currency .
+
+pip:period
+      a       owl:DatatypeProperty ;
+      rdfs:domain pip:PeriodSetting ;
+      rdfs:label "period"^^xsd:string ;
+      rdfs:range xsd:integer .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9e>
+      a       pip:EMAResult ;
+      pip:Value "89.5554816444502" ;
+      pip:timeStamp "2015-10-19T14:06:18.22Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edc>
+      a       pip:EMAResult ;
+      pip:Value "89.3790436708764" ;
+      pip:timeStamp "2015-10-19T14:06:18.998Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1b>
+      a       pip:EMAResult ;
+      pip:Value "89.5531010019674" ;
+      pip:timeStamp "2015-10-19T14:06:18.683Z" .
+
+pip:Trade_1
+      a       pip:Trade ;
+      rdfs:label "Trade 1"^^xsd:string ;
+      pip:amount 1000 ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasInstrument pip:AUDJPY_1 ;
+      pip:hasPosition pip:PositionLong .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5a>
+      a       pip:EMAResult ;
+      pip:Value "89.5298837906407" ;
+      pip:timeStamp "2015-10-19T14:06:18.427Z" .
+
+pip:SMA
+      a       owl:Class ;
+      rdfs:subClassOf pip:Indicator ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:SMAPeriodSetting ;
+                owl:onProperty pip:hasIndicatorSetting
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1c>
+      a       pip:EMAResult ;
+      pip:Value "89.5314709538416" ;
+      pip:timeStamp "2015-10-19T14:06:18.683Z" .
+
+pip:CrossoverResult
+      a       owl:Class ;
+      rdfs:label "Crossover result"^^xsd:string ;
+      rdfs:subClassOf pip:SignalResult .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edb>
+      a       pip:EMAResult ;
+      pip:Value "89.2459103525708" ;
+      pip:timeStamp "2015-10-19T14:06:19.007Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eeb>
+      a       pip:EMAResult ;
+      pip:Value "89.3460924347147" ;
+      pip:timeStamp "2015-10-19T14:06:18.917Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0c>
+      a       pip:EMAResult ;
+      pip:Value "89.5187720924754" ;
+      pip:timeStamp "2015-10-19T14:06:18.749Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efc>
+      a       pip:EMAResult ;
+      pip:Value "89.5147781044894" ;
+      pip:timeStamp "2015-10-19T14:06:18.807Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8d>
+      a       pip:EMAResult ;
+      pip:Value "89.4823520579738" ;
+      pip:timeStamp "2015-10-19T14:06:18.273Z" .
+
+pip:IndicatorResult
+      a       owl:Class ;
+      rdfs:label "Indicator result"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorAnalysis .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0d>
+      a       pip:EMAResult ;
+      pip:Value "89.5364581107201" ;
+      pip:timeStamp "2015-10-19T14:06:18.74Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5d>
+      a       pip:EMAResult ;
+      pip:Value "89.5529494573088" ;
+      pip:timeStamp "2015-10-19T14:06:18.417Z" .
+
+pip:SmallBeneficial
+      a       pip:EstimatedEconomicImpact ;
+      rdfs:label "Small beneficial"^^xsd:string .
+
+pip:EMAResult_3
+      a       pip:EMAResult ;
+      rdfs:label "EMAResult 3"^^xsd:string ;
+      pip:TimeStamp "2015-10-13T10:59:50.167"^^xsd:dateTime ;
+      pip:Value "2.2"^^xsd:float ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] .
+
+pip:NZDUSD
+      a       owl:Class ;
+      rdfs:label "NZD/USD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:USD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:NZD ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+pip:France
+      a       pip:Country ;
+      rdfs:label "France"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:EuropeanUnionEconomy .
+
+pip:m15
+      a       pip:TimeFrame ;
+      rdfs:label "m15"^^xsd:string ;
+      pip:TimeSpanMinutes 15 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4d>
+      a       pip:EMAResult ;
+      pip:Value "89.6185792001004" ;
+      pip:timeStamp "2015-10-19T14:06:18.483Z" .
+
+pip:UnitedStates
+      a       pip:Country ;
+      rdfs:label "United states"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:USEconomy .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1d>
+      a       pip:EMAResult ;
+      pip:Value "89.5540756698438" ;
+      pip:timeStamp "2015-10-19T14:06:18.671Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eda>
+      a       pip:EMAResult ;
+      pip:Value "89.3758175197897" ;
+      pip:timeStamp "2015-10-19T14:06:19.007Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eea>
+      a       pip:EMAResult ;
+      pip:Value "89.4548324145589" ;
+      pip:timeStamp "2015-10-19T14:06:18.917Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efd>
+      a       pip:EMAResult ;
+      pip:Value "89.4950067787654" ;
+      pip:timeStamp "2015-10-19T14:06:18.807Z" .
+
+pip:CrossDirection
+      a       owl:Class ;
+      rdfs:label "Cross direction"^^xsd:string ;
+      rdfs:subClassOf pip:ValuePartition .
+
+pip:Government
+      a       owl:Class ;
+      rdfs:label "Government"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0e>
+      a       pip:EMAResult ;
+      pip:Value "89.5193952426568" ;
+      pip:timeStamp "2015-10-19T14:06:18.74Z" .
+
+pip:Trade
+      a       owl:Class ;
+      rdfs:label "Trade"^^xsd:string ;
+      rdfs:subClassOf pip:Trading .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5c>
+      a       pip:EMAResult ;
+      pip:Value "89.5270434651384" ;
+      pip:timeStamp "2015-10-19T14:06:18.417Z" .
+
+pip:hasTrade
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Strategy ;
+      rdfs:label "has trade"^^xsd:string ;
+      rdfs:range pip:Trade .
+
+pip:EMAResult_2
+      a       pip:EMAResult ;
+      rdfs:label "EMAResult 2"^^xsd:string ;
+      pip:TimeStamp "2015-10-13T10:04:31.702"^^xsd:dateTime ;
+      pip:Value "1.1"^^xsd:float ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4c>
+      a       pip:EMAResult ;
+      pip:Value "89.5658102783853" ;
+      pip:timeStamp "2015-10-19T14:06:18.483Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1e>
+      a       pip:EMAResult ;
+      pip:Value "89.5308250049028" ;
+      pip:timeStamp "2015-10-19T14:06:18.671Z" .
+
+pip:PositionLong
+      a       pip:Position ;
+      rdfs:label "Position long"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8c>
+      a       pip:EMAResult ;
+      pip:Value "89.5145181392261" ;
+      pip:timeStamp "2015-10-19T14:06:18.273Z" .
+
+pip:EMAPeriodSetting_8
+      a       pip:EMAPeriodSetting ;
+      rdfs:label "EMAPeriod setting 8"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:period 8 .
+
+pip:NewZealandGovernment
+      a       pip:Government ;
+      rdfs:label "New zealand government"^^xsd:string .
+
+pip:EURGBP
+      a       owl:Class ;
+      rdfs:label "EUR/GBP"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:GBP ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:EUR ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+pip:EMAPeriodSetting_34
+      a       pip:EMAPeriodSetting ;
+      rdfs:label "EMAPeriod setting 34"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:period 34 .
+
+pip:LowImportance
+      a       pip:Importance ;
+      rdfs:label "Low importance"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efe>
+      a       pip:EMAResult ;
+      pip:Value "89.5243713827005" ;
+      pip:timeStamp "2015-10-19T14:06:18.796Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0a>
+      a       pip:EMAResult ;
+      pip:Value "89.526469168183" ;
+      pip:timeStamp "2015-10-19T14:06:18.759Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eed>
+      a       pip:EMAResult ;
+      pip:Value "89.3533473300527" ;
+      pip:timeStamp "2015-10-19T14:06:18.906Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9b>
+      a       pip:EMAResult ;
+      pip:Value "89.4851192203002" ;
+      pip:timeStamp "2015-10-19T14:06:18.24Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7b>
+      a       pip:EMAResult ;
+      pip:Value "89.5193395144574" ;
+      pip:timeStamp "2015-10-19T14:06:18.321Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5f>
+      a       pip:EMAResult ;
+      pip:Value "89.5461663451875" ;
+      pip:timeStamp "2015-10-19T14:06:18.41Z" .
+
+pip:EURGBP_1
+      a       pip:EURGBP ;
+      rdfs:label "EURGBP 1"^^xsd:string ;
+      pip:baseCurrency pip:EUR_1 ;
+      pip:quoteCurrency pip:GBP_1 .
+
+pip:Canada
+      a       pip:Country ;
+      rdfs:label "Canada"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:CanadaEconomy .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8b>
+      a       pip:EMAResult ;
+      pip:Value "89.4728419514114" ;
+      pip:timeStamp "2015-10-19T14:06:18.281Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1f>
+      a       pip:EMAResult ;
+      pip:Value "89.5552365908672" ;
+      pip:timeStamp "2015-10-19T14:06:18.661Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4b>
+      a       pip:EMAResult ;
+      pip:Value "89.6231070498784" ;
+      pip:timeStamp "2015-10-19T14:06:18.49Z" .
+
+pip:NZDJPY
+      a       owl:Class ;
+      rdfs:label "NZD/JPY"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:JPY ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:NZD ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+pip:GBPJPY_1
+      a       pip:GBPJPY ;
+      rdfs:label "GBPJPY 1"^^xsd:string ;
+      pip:baseCurrency pip:GBP_1 ;
+      pip:quoteCurrency pip:JPY_1 .
+
+pip:hasPosition
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Trade ;
+      rdfs:label "has position"^^xsd:string ;
+      rdfs:range pip:Position .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0b>
+      a       pip:EMAResult ;
+      pip:Value "89.5334989333763" ;
+      pip:timeStamp "2015-10-19T14:06:18.749Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eff>
+      a       pip:EMAResult ;
+      pip:Value "89.5172533739242" ;
+      pip:timeStamp "2015-10-19T14:06:18.796Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eec>
+      a       pip:EMAResult ;
+      pip:Value "89.4593165125528" ;
+      pip:timeStamp "2015-10-19T14:06:18.906Z" .
+
+pip:hasCrossDirection
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:CrossoverResult ;
+      rdfs:label "has cross direction"^^xsd:string ;
+      rdfs:range pip:CrossDirection .
+
+pip:EURCAD
+      a       owl:Class ;
+      rdfs:label "EUR/CAD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:CAD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:EUR ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9a>
+      a       pip:EMAResult ;
+      pip:Value "89.5438733749986" ;
+      pip:timeStamp "2015-10-19T14:06:18.24Z" .
+
+pip:hasIndicator
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:IndicatorBasedStrategy ;
+      rdfs:label "has indicator"^^xsd:string .
+
+pip:EUR
+      a       owl:Class ;
+      rdfs:label "EUR"^^xsd:string ;
+      rdfs:subClassOf pip:Currency .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5e>
+      a       pip:EMAResult ;
+      pip:Value "89.523662251198" ;
+      pip:timeStamp "2015-10-19T14:06:18.411Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7a>
+      a       pip:EMAResult ;
+      pip:Value "89.4997466899602" ;
+      pip:timeStamp "2015-10-19T14:06:18.321Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8a>
+      a       pip:EMAResult ;
+      pip:Value "89.5042092536358" ;
+      pip:timeStamp "2015-10-19T14:06:18.281Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4a>
+      a       pip:EMAResult ;
+      pip:Value "89.5703204263015" ;
+      pip:timeStamp "2015-10-19T14:06:18.49Z" .
+
+pip:SSD
+      a       owl:Class ;
+      rdfs:subClassOf pip:Indicator ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:unionOf ([ a       owl:Restriction ;
+                            owl:allValuesFrom pip:SSDPeriodSetting_MA ;
+                            owl:onProperty pip:hasIndicatorSetting
+                          ] pip:SSDPeriodSetting_MAMA pip:SSDPeriodSetting_Raw)
+              ] .
+
+pip:EMAResult_4
+      a       pip:EMAResult ;
+      rdfs:label "EMAResult 4"^^xsd:string ;
+      pip:TimeStamp "2015-10-13T11:00:10.45"^^xsd:dateTime ;
+      pip:Value "2.0"^^xsd:float ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef0>
+      a       pip:EMAResult ;
+      pip:Value "89.4801256276589" ;
+      pip:timeStamp "2015-10-19T14:06:18.884Z" .
+
+pip:USDCAD
+      a       owl:Class ;
+      rdfs:label "USD/CAD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:USD ;
+                owl:onProperty pip:baseCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:CAD ;
+                owl:onProperty pip:quoteCurrency
+              ] .
+
+pip:EMAResult
+      a       owl:Class ;
+      rdfs:label "EMAResult"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+<http://pipseq.org#CrossoverResult_49006b60.150806c0ecc.-7f00>
+      a       pip:CrossoverResult ;
+      pip:hasCrossDirection
+              pip:CrossDirectionBelow ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f18> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f17> ;
+      pip:hasSignal "Crossover_1" ;
+      pip:timeStamp "2015-10-19T14:06:18.794Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f08>
+      a       pip:EMAResult ;
+      pip:Value "89.5387194936869" ;
+      pip:timeStamp "2015-10-19T14:06:18.769Z" .
+
+pip:GBPAUD_1
+      a       pip:GBPAUD ;
+      rdfs:label "GBPAUD 1"^^xsd:string ;
+      pip:baseCurrency pip:GBP_1 ;
+      pip:quoteCurrency pip:AUD_1 .
+
+pip:Currency
+      a       owl:Class ;
+      rdfs:label "Currency"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+pip:SmallAdverse
+      a       pip:EstimatedEconomicImpact ;
+      rdfs:label "Small adverse"^^xsd:string .
+
+pip:LargeAdverse
+      a       pip:EstimatedEconomicImpact ;
+      rdfs:label "Large adverse"^^xsd:string .
+
+pip:hasMarketEntry
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Trigger ;
+      rdfs:label "has market entry"^^xsd:string ;
+      rdfs:range pip:MarketEntry .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f85>
+      a       pip:EMAResult ;
+      pip:Value "89.4687093490727" ;
+      pip:timeStamp "2015-10-19T14:06:18.297Z" .
+
+rdfs:comment
+      rdfs:subPropertyOf rdfs:label .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f28>
+      a       pip:EMAResult ;
+      pip:Value "89.5262831564714" ;
+      pip:timeStamp "2015-10-19T14:06:18.621Z" .
+
+pip:forex
+      a       owl:Class ;
+      rdfs:comment "forex is the root of the domain model for the forex-modeling ontology"^^xsd:string , "Forex is an asset class and a type of market.  Specifically, exchange rates for currency pairs are the financial instrument and the forex market is the international banking network"^^xsd:string ;
+      rdfs:subClassOf owl:Thing ;
+      owl:versionInfo "1.0.0.0"^^xsd:string .
+
+pip:AustraliaEconomy
+      a       pip:Economy ;
+      rdfs:label "Australian economy"^^xsd:string ;
+      pip:isGovernedBy pip:AustraliaGovernment .
+
+pip:High
+      a       pip:PeriodicPrice ;
+      rdfs:label "High, the highest price in a given period"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f18>
+      a       pip:EMAResult ;
+      pip:Value "89.5354218150379" ;
+      pip:timeStamp "2015-10-19T14:06:18.7Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f99>
+      a       pip:EMAResult ;
+      pip:Value "89.4896206910917" ;
+      pip:timeStamp "2015-10-19T14:06:18.244Z" .
+
+pip:Pip
+      a       owl:Class ;
+      rdfs:label "Pip"^^xsd:string ;
+      rdfs:subClassOf pip:Price .
+
+pip:Bid
+      a       owl:Class ;
+      rdfs:label "Bid"^^xsd:string ;
+      rdfs:subClassOf pip:Price .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f09>
+      a       pip:EMAResult ;
+      pip:Value "89.5325168562279" ;
+      pip:timeStamp "2015-10-19T14:06:18.759Z" .
+
+pip:PositionShort
+      a       pip:Position ;
+      rdfs:label "Position short"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f29>
+      a       pip:EMAResult ;
+      pip:Value "89.5528054247491" ;
+      pip:timeStamp "2015-10-19T14:06:18.613Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f84>
+      a       pip:EMAResult ;
+      pip:Value "89.4938388968844" ;
+      pip:timeStamp "2015-10-19T14:06:18.297Z" .
+
+pip:EURJPY
+      a       owl:Class ;
+      rdfs:label "EUR/JPY"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:EUR ;
+                owl:onProperty pip:baseCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:JPY ;
+                owl:onProperty pip:quoteCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f98>
+      a       pip:EMAResult ;
+      pip:Value "89.5410881069934" ;
+      pip:timeStamp "2015-10-19T14:06:18.244Z" .
+
+pip:amount
+      a       owl:DatatypeProperty ;
+      rdfs:domain pip:Trade ;
+      rdfs:label "amount"^^xsd:string ;
+      rdfs:range xsd:integer .
+
+pip:USD_1
+      a       pip:USD ;
+      rdfs:label "USD 1"^^xsd:string ;
+      pip:base "dollar"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f19>
+      a       pip:EMAResult ;
+      pip:Value "89.5526720136471" ;
+      pip:timeStamp "2015-10-19T14:06:18.69Z" .
+
+pip:hasIndicatorResult
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (pip:Indicator pip:SignalResult)
+              ] ;
+      rdfs:label "has indicator result"^^xsd:string ;
+      rdfs:range pip:IndicatorResult .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4f>
+      a       pip:EMAResult ;
+      pip:Value "89.6107936493525" ;
+      pip:timeStamp "2015-10-19T14:06:18.475Z" .
+
+pip:occurred
+      a       owl:DatatypeProperty ;
+      rdfs:domain pip:NewsEvent ;
+      rdfs:label "occurred"^^xsd:string ;
+      rdfs:range xsd:dateTime .
+
+pip:H1
+      a       pip:TimeFrame ;
+      rdfs:label "H1"^^xsd:string ;
+      pip:TimeSpanMinutes 60 .
+
+pip:Close
+      a       pip:PeriodicPrice ;
+      rdfs:label "Close, the closing price for a given period"^^xsd:string .
+
+pip:USDJPY
+      a       owl:Class ;
+      rdfs:label "USD/JPY"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:JPY ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:USD ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+pip:TimeSpanMinutes
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The timespan is a measure of a TimeFrame in minutes"^^xsd:string ;
+      rdfs:domain pip:TimeFrame ;
+      rdfs:label "Datatype property 1"^^xsd:string ;
+      rdfs:range xsd:integer .
+
+pip:EconomicEvent
+      a       owl:Class ;
+      rdfs:label "Economic event"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f87>
+      a       pip:EMAResult ;
+      pip:Value "89.468063869978" ;
+      pip:timeStamp "2015-10-19T14:06:18.291Z" .
+
+pip:Ask
+      a       owl:Class ;
+      rdfs:label "Ask"^^xsd:string ;
+      rdfs:subClassOf pip:Price .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f16>
+      a       pip:EMAResult ;
+      pip:Value "89.5346378575211" ;
+      pip:timeStamp "2015-10-19T14:06:18.708Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f97>
+      a       pip:EMAResult ;
+      pip:Value "89.4939728212226" ;
+      pip:timeStamp "2015-10-19T14:06:18.248Z" .
+
+pip:JapanGovernment
+      a       pip:Government ;
+      rdfs:label "Japan government"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4e>
+      a       pip:EMAResult ;
+      pip:Value "89.5611492817841" ;
+      pip:timeStamp "2015-10-19T14:06:18.475Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2f>
+      a       pip:EMAResult ;
+      pip:Value "89.5526904343048" ;
+      pip:timeStamp "2015-10-19T14:06:18.591Z" .
+
+pip:EstimatedEconomicImpact
+      a       owl:Class ;
+      rdfs:label "Estimated economic impact (scale and valence)"^^xsd:string , """The effect that an event, policy change, or market trend will have on economic factors such as interest rates, consumer confidence, stock market activity, or unemployment. Events such as regulatory changes, supply shortages or natural disasters can have a significant economic impact due to the way that they affect business activities.
+
+Read more: http://www.investorwords.com/16388/economic_impact.html#ixzz3nbJlYjC8"""^^xsd:string ;
+      rdfs:subClassOf pip:ValuePartition .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f86>
+      a       pip:EMAResult ;
+      pip:Value "89.4962467063747" ;
+      pip:timeStamp "2015-10-19T14:06:18.292Z" .
+
+pip:PriceAction
+      a       owl:Class ;
+      rdfs:label "Price action"^^xsd:string ;
+      rdfs:subClassOf pip:TechnicalAnalysis .
+
+pip:D1
+      a       pip:TimeFrame ;
+      rdfs:label "D1"^^xsd:string ;
+      pip:TimeSpanMinutes 1440 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa9>
+      a       pip:EMAResult ;
+      pip:Value "89.4823499346326" ;
+      pip:timeStamp "2015-10-19T14:06:18.168Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2e>
+      a       pip:EMAResult ;
+      pip:Value "89.5163149545031" ;
+      pip:timeStamp "2015-10-19T14:06:18.598Z" .
+
+pip:Germany
+      a       pip:Country ;
+      rdfs:label "Germany"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:EuropeanUnionEconomy .
+
+pip:AUDUSD
+      a       owl:Class ;
+      rdfs:label "AUD/USD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:AUD ;
+                owl:onProperty pip:baseCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:USD ;
+                owl:onProperty pip:quoteCurrency
+              ] .
+
+pip:AUDCAD
+      a       owl:Class ;
+      rdfs:label "AUD/CAD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:AUD ;
+                owl:onProperty pip:baseCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:CAD ;
+                owl:onProperty pip:quoteCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f17>
+      a       pip:EMAResult ;
+      pip:Value "89.5515510900632" ;
+      pip:timeStamp "2015-10-19T14:06:18.7Z" .
+
+pip:baseCurrency
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Instrument ;
+      rdfs:label "base currency"^^xsd:string ;
+      rdfs:range pip:Currency .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f96>
+      a       pip:EMAResult ;
+      pip:Value "89.5392463591985" ;
+      pip:timeStamp "2015-10-19T14:06:18.248Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f04>
+      a       pip:EMAResult ;
+      pip:Value "89.5305601490556" ;
+      pip:timeStamp "2015-10-19T14:06:18.777Z" .
+
+pip:hasTrigger
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Setup ;
+      rdfs:label "has trigger"^^xsd:string ;
+      rdfs:range pip:Trigger .
+
+pip:hasSlowIndicator
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Crossover ;
+      rdfs:label "has slow indicator"^^xsd:string ;
+      rdfs:subPropertyOf pip:hasIndicator .
+
+pip:AUDUSD_1
+      a       pip:AUDUSD ;
+      rdfs:label "AUDUSD 1"^^xsd:string ;
+      pip:baseCurrency pip:AUD_1 ;
+      pip:quoteCurrency pip:USD_1 .
+
+pip:Setup
+      a       owl:Class ;
+      rdfs:label "Setup"^^xsd:string ;
+      rdfs:subClassOf pip:Trading .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2d>
+      a       pip:EMAResult ;
+      pip:Value "89.5521409929057" ;
+      pip:timeStamp "2015-10-19T14:06:18.598Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f89>
+      a       pip:EMAResult ;
+      pip:Value "89.4715442800539" ;
+      pip:timeStamp "2015-10-19T14:06:18.286Z" .
+
+pip:Position
+      a       owl:Class ;
+      rdfs:label "Position"^^xsd:string ;
+      rdfs:subClassOf pip:ValuePartition .
+
+pip:CalendarEvent
+      a       owl:Class ;
+      rdfs:label "Calendar event"^^xsd:string ;
+      rdfs:subClassOf pip:EconomicEvent .
+
+pip:USEconomy
+      a       pip:Economy ;
+      rdfs:label "USEconomy"^^xsd:string ;
+      pip:isGovernedBy pip:USGovernment .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa8>
+      a       pip:EMAResult ;
+      pip:Value "89.5712539981881" ;
+      pip:timeStamp "2015-10-19T14:06:18.168Z" .
+
+pip:IndicatorAnalysis
+      a       owl:Class ;
+      rdfs:label "Indicator analysis"^^xsd:string ;
+      rdfs:subClassOf pip:TechnicalAnalysis .
+
+pip:ValuePartition
+      a       owl:Class ;
+      rdfs:label "Value type"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+pip:EURAUD_1
+      a       pip:EURAUD ;
+      rdfs:label "EURAUD 1"^^xsd:string ;
+      pip:baseCurrency pip:EUR_1 ;
+      pip:quoteCurrency pip:AUD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f05>
+      a       pip:EMAResult ;
+      pip:Value "89.534963576494" ;
+      pip:timeStamp "2015-10-19T14:06:18.777Z" .
+
+pip:EURCAD_1
+      a       pip:EURCAD ;
+      rdfs:label "EURCAD 1"^^xsd:string ;
+      pip:baseCurrency pip:EUR_1 ;
+      pip:quoteCurrency pip:CAD_1 .
+
+<http://pipseq.org#CrossoverResult_49006b60.150806c0ecc.-7f03>
+      a       pip:CrossoverResult ;
+      pip:hasCrossDirection
+              pip:CrossDirectionBelow ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f18> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f17> ;
+      pip:hasSignal "Crossover_1" ;
+      pip:timeStamp "2015-10-19T14:06:18.785Z" .
+
+pip:MACDPeriodSetting_MACD
+      a       owl:Class ;
+      rdfs:label "MACDPeriod setting MACD"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2c>
+      a       pip:EMAResult ;
+      pip:Value "89.5164911010556" ;
+      pip:timeStamp "2015-10-19T14:06:18.605Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3c>
+      a       pip:EMAResult ;
+      pip:Value "89.5626784753884" ;
+      pip:timeStamp "2015-10-19T14:06:18.545Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f88>
+      a       pip:EMAResult ;
+      pip:Value "89.5002355056255" ;
+      pip:timeStamp "2015-10-19T14:06:18.286Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa7>
+      a       pip:EMAResult ;
+      pip:Value "89.4869557580239" ;
+      pip:timeStamp "2015-10-19T14:06:18.192Z" .
+
+pip:TechnicalAnalysis
+      a       owl:Class ;
+      rdfs:subClassOf pip:forex .
+
+pip:Benign
+      a       pip:EstimatedEconomicImpact ;
+      rdfs:label "Benign"^^xsd:string .
+
+pip:Support
+      a       owl:Class ;
+      rdfs:label "Support"^^xsd:string ;
+      rdfs:subClassOf pip:PriceAction .
+
+<http://pipseq.org#CrossoverResult_49006b60.150806c0ecc.-7f06>
+      a       pip:CrossoverResult ;
+      pip:hasCrossDirection
+              pip:CrossDirectionBelow ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f18> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f17> ;
+      pip:hasSignal "Crossover_1" ;
+      pip:timeStamp "2015-10-19T14:06:18.776Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2b>
+      a       pip:EMAResult ;
+      pip:Value "89.5521295865017" ;
+      pip:timeStamp "2015-10-19T14:06:18.605Z" .
+
+pip:CrossDirectionAbove
+      a       pip:CrossDirection ;
+      rdfs:label "Cross direction above"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa6>
+      a       pip:EMAResult ;
+      pip:Value "89.5688398687235" ;
+      pip:timeStamp "2015-10-19T14:06:18.192Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f71>
+      a       pip:EMAResult ;
+      pip:Value "89.5602450133745" ;
+      pip:timeStamp "2015-10-19T14:06:18.35Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3f>
+      a       pip:EMAResult ;
+      pip:Value "89.5735350688035" ;
+      pip:timeStamp "2015-10-19T14:06:18.537Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f07>
+      a       pip:EMAResult ;
+      pip:Value "89.5324169101798" ;
+      pip:timeStamp "2015-10-19T14:06:18.769Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa4>
+      a       pip:EMAResult ;
+      pip:Value "89.5674510375926" ;
+      pip:timeStamp "2015-10-19T14:06:18.2Z" .
+
+pip:CADJPY_1
+      a       pip:CADJPY ;
+      rdfs:label "CADJPY 1"^^xsd:string ;
+      pip:baseCurrency pip:CAD_1 ;
+      pip:quoteCurrency pip:JPY_1 .
+
+pip:EMAPeriodSetting
+      a       owl:Class ;
+      rdfs:label "EMAPeriod setting"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+pip:H4
+      a       pip:TimeFrame ;
+      rdfs:label "H4"^^xsd:string ;
+      pip:TimeSpanMinutes 240 .
+
+pip:Indicator
+      a       owl:Class ;
+      rdfs:subClassOf pip:IndicatorAnalysis .
+
+pip:China
+      a       pip:Country ;
+      rdfs:label "China"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2a>
+      a       pip:EMAResult ;
+      pip:Value "89.5210790025505" ;
+      pip:timeStamp "2015-10-19T14:06:18.613Z" .
+
+pip:EUR_1
+      a       pip:EUR ;
+      rdfs:label "EUR 1"^^xsd:string ;
+      pip:base "euro"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa5>
+      a       pip:EMAResult ;
+      pip:Value "89.4949516010871" ;
+      pip:timeStamp "2015-10-19T14:06:18.2Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3e>
+      a       pip:EMAResult ;
+      pip:Value "89.5751590025394" ;
+      pip:timeStamp "2015-10-19T14:06:18.537Z" .
+
+pip:PeriodicPrice
+      a       owl:Class ;
+      rdfs:label "Periodic price"^^xsd:string ;
+      rdfs:subClassOf pip:ValuePartition .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f70>
+      a       pip:EMAResult ;
+      pip:Value "89.5148826202684" ;
+      pip:timeStamp "2015-10-19T14:06:18.35Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f62>
+      a       pip:EMAResult ;
+      pip:Value "89.5209242795066" ;
+      pip:timeStamp "2015-10-19T14:06:18.39Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f72>
+      a       pip:EMAResult ;
+      pip:Value "89.5096990224066" ;
+      pip:timeStamp "2015-10-19T14:06:18.343Z" .
+
+pip:GBPAUD
+      a       owl:Class ;
+      rdfs:label "GBP/AUD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:AUD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:GBP ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f90>
+      a       pip:EMAResult ;
+      pip:Value "89.5257909088687" ;
+      pip:timeStamp "2015-10-19T14:06:18.264Z" .
+
+pip:hasFastIndicator
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Crossover ;
+      rdfs:label "has fast indicator"^^xsd:string ;
+      rdfs:subPropertyOf pip:hasIndicator .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f13>
+      a       pip:EMAResult ;
+      pip:Value "89.5486022284237" ;
+      pip:timeStamp "2015-10-19T14:06:18.716Z" .
+
+pip:hasSignal
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (pip:Trigger pip:SignalResult)
+              ] ;
+      rdfs:label "has signal"^^xsd:string ;
+      rdfs:range pip:Signal .
+
+pip:Crossover
+      a       owl:Class ;
+      rdfs:label "Cross"^^xsd:string ;
+      rdfs:subClassOf pip:Signal .
+
+pip:graphTag
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (pip:IndicatorAnalysis pip:Trading pip:ValuePartition)
+              ] ;
+      rdfs:label "graph tag"^^xsd:string ;
+      rdfs:range owl:Thing .
+
+pip:TimeFrame
+      a       owl:Class ;
+      rdfs:label "Time frame"^^xsd:string ;
+      rdfs:subClassOf pip:ValuePartition .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f23>
+      a       pip:EMAResult ;
+      pip:Value "89.5557408603547" ;
+      pip:timeStamp "2015-10-19T14:06:18.643Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f52>
+      a       pip:EMAResult ;
+      pip:Value "89.5467252716274" ;
+      pip:timeStamp "2015-10-19T14:06:18.46Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa0>
+      a       pip:EMAResult ;
+      pip:Value "89.5592323993969" ;
+      pip:timeStamp "2015-10-19T14:06:18.216Z" .
+
+pip:MACD
+      a       owl:Class ;
+      rdfs:label "MACD"^^xsd:string ;
+      rdfs:subClassOf pip:Indicator ;
+      owl:equivalentClass
+              [ a       owl:Class ;
+                owl:unionOf ([ a       owl:Restriction ;
+                            owl:allValuesFrom pip:MACDPeriodSetting_Histogram ;
+                            owl:onProperty pip:hasIndicatorSetting
+                          ] pip:MACDPeriodSetting_MACD pip:MACDPeriodSetting_Signal)
+              ] .
+
+pip:AUDJPY_1
+      a       pip:AUDJPY ;
+      rdfs:label "AUDJPY 1"^^xsd:string ;
+      pip:baseCurrency pip:AUD_1 ;
+      pip:quoteCurrency pip:JPY_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f33>
+      a       pip:EMAResult ;
+      pip:Value "89.5536431483429" ;
+      pip:timeStamp "2015-10-19T14:06:18.576Z" .
+
+pip:Economy
+      a       owl:Class ;
+      rdfs:label "Economy"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef7>
+      a       pip:EMAResult ;
+      pip:Value "89.4697154451294" ;
+      pip:timeStamp "2015-10-19T14:06:18.834Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f42>
+      a       pip:EMAResult ;
+      pip:Value "89.5800922581208" ;
+      pip:timeStamp "2015-10-19T14:06:18.52Z" .
+
+pip:Trading
+      a       owl:Class ;
+      rdfs:label "Trading"^^xsd:string ;
+      rdfs:subClassOf pip:forex .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee0>
+      a       pip:EMAResult ;
+      pip:Value "89.3970503734751" ;
+      pip:timeStamp "2015-10-19T14:06:18.973Z" .
+
+pip:EMA_34
+      a       pip:EMA ;
+      rdfs:label "EMA 34"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef0> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f62> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f72> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f90> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f13> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f23> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f52> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa0> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f33> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f42> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee0> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eee> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ede> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f09> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f29> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f84> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ed8> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7faa> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f98> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee8> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef8> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f19> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f74> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f01> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f60> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f21> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f48> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f68> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa2> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f54> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f40> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f35> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f15> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efa> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee2> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edc> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f86> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef6> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f17> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f96> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f46> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f76> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f04> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f27> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f80> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f37> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f66> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f94> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f56> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efc> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2d> , pip:EMAResult_3 , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa8> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee4> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eda> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eea> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef4> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5c> , pip:EMAResult_2 , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f88> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f78> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f82> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f31> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f44> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f11> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f58> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efe> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f64> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f92> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f39> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f50> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa6> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f25> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f07> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa4> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee6> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eec> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef2> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f70> ;
+      pip:hasIndicatorSetting
+              pip:EMAPeriodSetting_34 ;
+      pip:hasInstrument pip:AUDJPY_1 ;
+      pip:hasTimeFrame pip:m15 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f91>
+      a       pip:EMAResult ;
+      pip:Value "89.4925987118827" ;
+      pip:timeStamp "2015-10-19T14:06:18.264Z" .
+
+pip:MarketEntryBuy
+      a       pip:MarketEntry ;
+      rdfs:label "Market entry buy"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f12>
+      a       pip:EMAResult ;
+      pip:Value "89.5348041175627" ;
+      pip:timeStamp "2015-10-19T14:06:18.723Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f63>
+      a       pip:EMAResult ;
+      pip:Value "89.5443067044758" ;
+      pip:timeStamp "2015-10-19T14:06:18.39Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f02>
+      a       pip:EMAResult ;
+      pip:Value "89.5299516135532" ;
+      pip:timeStamp "2015-10-19T14:06:18.786Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f73>
+      a       pip:EMAResult ;
+      pip:Value "89.5495348722467" ;
+      pip:timeStamp "2015-10-19T14:06:18.343Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f53>
+      a       pip:EMAResult ;
+      pip:Value "89.5862745685264" ;
+      pip:timeStamp "2015-10-19T14:06:18.46Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f22>
+      a       pip:EMAResult ;
+      pip:Value "89.5305433075669" ;
+      pip:timeStamp "2015-10-19T14:06:18.653Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa1>
+      a       pip:EMAResult ;
+      pip:Value "89.4943737670315" ;
+      pip:timeStamp "2015-10-19T14:06:18.216Z" .
+
+pip:AUD_1
+      a       pip:AUD ;
+      rdfs:label "AUD 1"^^xsd:string ;
+      pip:base "dollar"^^xsd:string .
+
+pip:SMAResult
+      a       owl:Class ;
+      rdfs:label "SMAResult"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+pip:scheduledFor
+      a       owl:DatatypeProperty ;
+      rdfs:domain pip:CalendarEvent ;
+      rdfs:label "scheduled for"^^xsd:string ;
+      rdfs:range xsd:dateTime .
+
+pip:USDCAD_1
+      a       pip:USDCAD ;
+      rdfs:label "USDCAD 1"^^xsd:string ;
+      pip:baseCurrency pip:USD_1 ;
+      pip:quoteCurrency pip:CAD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f32>
+      a       pip:EMAResult ;
+      pip:Value "89.5129371624351" ;
+      pip:timeStamp "2015-10-19T14:06:18.583Z" .
+
+pip:MACDPeriodSetting_Histogram
+      a       owl:Class ;
+      rdfs:label "MACDPeriod setting Histogram"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+pip:NZDJPY_1
+      a       pip:NZDJPY ;
+      rdfs:label "NZDJPY 1"^^xsd:string ;
+      pip:baseCurrency pip:NZD_1 ;
+      pip:quoteCurrency pip:JPY_1 .
+
+pip:JapanEconomy
+      a       pip:Economy ;
+      rdfs:label "Japan economy"^^xsd:string ;
+      pip:isGovernedBy pip:JapanGovernment .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f43>
+      a       pip:EMAResult ;
+      pip:Value "89.6077219668369" ;
+      pip:timeStamp "2015-10-19T14:06:18.52Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef8>
+      a       pip:EMAResult ;
+      pip:Value "89.5087133208438" ;
+      pip:timeStamp "2015-10-19T14:06:18.825Z" .
+
+pip:MACDResult
+      a       owl:Class ;
+      rdfs:label "MACDResult"^^xsd:string ;
+      rdfs:subClassOf pip:CompoundResult .
+
+pip:hasComponentResult
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:CompoundResult ;
+      rdfs:label "has component result"^^xsd:string ;
+      rdfs:range pip:IndicatorResult .
+
+pip:AustraliaGovernment
+      a       pip:Government ;
+      rdfs:label "Australia government"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee1>
+      a       pip:EMAResult ;
+      pip:Value "89.2435483468793" ;
+      pip:timeStamp "2015-10-19T14:06:18.973Z" .
+
+pip:Commission
+      a       owl:Class ;
+      rdfs:label "Commission"^^xsd:string ;
+      rdfs:subClassOf pip:Price .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f74>
+      a       pip:EMAResult ;
+      pip:Value "89.5083317362329" ;
+      pip:timeStamp "2015-10-19T14:06:18.337Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f01>
+      a       pip:EMAResult ;
+      pip:Value "89.5292487830503" ;
+      pip:timeStamp "2015-10-19T14:06:18.786Z" .
+
+pip:IndicatorBasedStrategy
+      a       owl:Class ;
+      rdfs:label "Indicator based strategy"^^xsd:string ;
+      rdfs:subClassOf pip:Strategy .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f60>
+      a       pip:EMAResult ;
+      pip:Value "89.5210552045096" ;
+      pip:timeStamp "2015-10-19T14:06:18.398Z" .
+
+pip:AUD
+      a       owl:Class ;
+      rdfs:label "AUD"^^xsd:string ;
+      rdfs:subClassOf pip:Currency .
+
+pip:hasPeriodicPrice
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Price ;
+      rdfs:label "has periodic price"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f21>
+      a       pip:EMAResult ;
+      pip:Value "89.5557241452562" ;
+      pip:timeStamp "2015-10-19T14:06:18.653Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa2>
+      a       pip:EMAResult ;
+      pip:Value "89.5637018158241" ;
+      pip:timeStamp "2015-10-19T14:06:18.211Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f54>
+      a       pip:EMAResult ;
+      pip:Value "89.5435657997475" ;
+      pip:timeStamp "2015-10-19T14:06:18.454Z" .
+
+pip:EMA
+      a       owl:Class ;
+      rdfs:subClassOf pip:Indicator ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:EMAPeriodSetting ;
+                owl:onProperty pip:hasIndicatorSetting
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f40>
+      a       pip:EMAResult ;
+      pip:Value "89.5787304609546" ;
+      pip:timeStamp "2015-10-19T14:06:18.529Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f35>
+      a       pip:EMAResult ;
+      pip:Value "89.5548314575675" ;
+      pip:timeStamp "2015-10-19T14:06:18.569Z" .
+
+pip:AUDCAD_1
+      a       pip:AUDCAD ;
+      rdfs:label "AUDCAD 1"^^xsd:string ;
+      pip:baseCurrency pip:AUD_1 ;
+      pip:quoteCurrency pip:CAD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f15>
+      a       pip:EMAResult ;
+      pip:Value "89.5496306308585" ;
+      pip:timeStamp "2015-10-19T14:06:18.708Z" .
+
+pip:SSD_1
+      a       pip:SSD .
+
+pip:AUDJPY
+      a       owl:Class ;
+      rdfs:label "AUD/JPY"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:JPY ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:AUD ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef5>
+      a       pip:EMAResult ;
+      pip:Value "89.4271000983646" ;
+      pip:timeStamp "2015-10-19T14:06:18.851Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f14>
+      a       pip:EMAResult ;
+      pip:Value "89.5359707186582" ;
+      pip:timeStamp "2015-10-19T14:06:18.716Z" .
+
+pip:economicParticipantIn
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Country ;
+      rdfs:label "member of"^^xsd:string ;
+      rdfs:range pip:Economy .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee2>
+      a       pip:EMAResult ;
+      pip:Value "89.4059881165243" ;
+      pip:timeStamp "2015-10-19T14:06:18.962Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f61>
+      a       pip:EMAResult ;
+      pip:Value "89.5421857373004" ;
+      pip:timeStamp "2015-10-19T14:06:18.398Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f75>
+      a       pip:EMAResult ;
+      pip:Value "89.54611246239" ;
+      pip:timeStamp "2015-10-19T14:06:18.337Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f20>
+      a       pip:EMAResult ;
+      pip:Value "89.5324736871334" ;
+      pip:timeStamp "2015-10-19T14:06:18.661Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f55>
+      a       pip:EMAResult ;
+      pip:Value "89.5811403675991" ;
+      pip:timeStamp "2015-10-19T14:06:18.454Z" .
+
+pip:JPY_1
+      a       pip:JPY ;
+      rdfs:label "JPY 1"^^xsd:string ;
+      pip:base "yen"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa3>
+      a       pip:EMAResult ;
+      pip:Value "89.5019833844052" ;
+      pip:timeStamp "2015-10-19T14:06:18.211Z" .
+
+pip:Country
+      a       owl:Class ;
+      rdfs:label "Country"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+pip:hasPeriodSetting
+      a       owl:ObjectProperty ;
+      rdfs:label "has MASetting"^^xsd:string ;
+      rdfs:range pip:PeriodSetting .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f41>
+      a       pip:EMAResult ;
+      pip:Value "89.5910361122976" ;
+      pip:timeStamp "2015-10-19T14:06:18.529Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f34>
+      a       pip:EMAResult ;
+      pip:Value "89.511069174058" ;
+      pip:timeStamp "2015-10-19T14:06:18.576Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef6>
+      a       pip:EMAResult ;
+      pip:Value "89.505280921205" ;
+      pip:timeStamp "2015-10-19T14:06:18.834Z" .
+
+pip:NZD
+      a       owl:Class ;
+      rdfs:label "NZD"^^xsd:string ;
+      rdfs:subClassOf pip:Currency .
+
+pip:UKEconomy
+      a       pip:Economy ;
+      rdfs:label "UKEconomy"^^xsd:string ;
+      pip:isGovernedBy pip:UKGovernment .
+
+pip:AUDNZD
+      a       owl:Class ;
+      rdfs:label "AUD/NZD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:NZD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:AUD ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f76>
+      a       pip:EMAResult ;
+      pip:Value "89.5067841368558" ;
+      pip:timeStamp "2015-10-19T14:06:18.332Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee3>
+      a       pip:EMAResult ;
+      pip:Value "89.2525200405073" ;
+      pip:timeStamp "2015-10-19T14:06:18.962Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f80>
+      a       pip:EMAResult ;
+      pip:Value "89.4946866474076" ;
+      pip:timeStamp "2015-10-19T14:06:18.31Z" .
+
+pip:RSI
+      a       owl:Class ;
+      rdfs:subClassOf pip:Indicator ;
+      owl:equivalentClass
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:RSIPeriodSetting ;
+                owl:onProperty pip:hasIndicatorSetting
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f27>
+      a       pip:EMAResult ;
+      pip:Value "89.5540559083882" ;
+      pip:timeStamp "2015-10-19T14:06:18.621Z" .
+
+pip:GBP
+      a       owl:Class ;
+      rdfs:label "GBP"^^xsd:string ;
+      rdfs:subClassOf pip:Currency .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f37>
+      a       pip:EMAResult ;
+      pip:Value "89.5582997276703" ;
+      pip:timeStamp "2015-10-19T14:06:18.562Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f66>
+      a       pip:EMAResult ;
+      pip:Value "89.5220582574075" ;
+      pip:timeStamp "2015-10-19T14:06:18.379Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f94>
+      a       pip:EMAResult ;
+      pip:Value "89.5369723926813" ;
+      pip:timeStamp "2015-10-19T14:06:18.253Z" .
+
+pip:CAD_1
+      a       pip:CAD ;
+      rdfs:label "CAD 1"^^xsd:string ;
+      pip:base "dollar"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef3>
+      a       pip:EMAResult ;
+      pip:Value "89.4126920641238" ;
+      pip:timeStamp "2015-10-19T14:06:18.87Z" .
+
+pip:MarketEntry
+      a       owl:Class ;
+      rdfs:label "Market entry"^^xsd:string ;
+      rdfs:subClassOf pip:ValuePartition .
+
+<http://pipseq.org>
+      a       owl:Ontology ;
+      owl:imports <http://www.w3.org/2004/02/skos/core> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee4>
+      a       pip:EMAResult ;
+      pip:Value "89.4151495556318" ;
+      pip:timeStamp "2015-10-19T14:06:18.951Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f77>
+      a       pip:EMAResult ;
+      pip:Value "89.5425293930924" ;
+      pip:timeStamp "2015-10-19T14:06:18.332Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f26>
+      a       pip:EMAResult ;
+      pip:Value "89.5285136576256" ;
+      pip:timeStamp "2015-10-19T14:06:18.631Z" .
+
+pip:GBP_1
+      a       pip:GBP ;
+      rdfs:label "GBP 1"^^xsd:string ;
+      pip:base "pound"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f81>
+      a       pip:EMAResult ;
+      pip:Value "89.4950928234116" ;
+      pip:timeStamp "2015-10-19T14:06:18.309Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f95>
+      a       pip:EMAResult ;
+      pip:Value "89.4972483459803" ;
+      pip:timeStamp "2015-10-19T14:06:18.253Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f67>
+      a       pip:EMAResult ;
+      pip:Value "89.5514443929335" ;
+      pip:timeStamp "2015-10-19T14:06:18.379Z" .
+
+pip:CrossoverResult_1
+      a       pip:CrossoverResult ;
+      rdfs:label "Crossover result 1"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasCrossDirection
+              pip:CrossDirectionAbove ;
+      pip:hasIndicatorResult
+              pip:EMAResult_3 , pip:EMAResult_4 ;
+      pip:hasSignal pip:Crossover_1 .
+
+pip:MediumImportance
+      a       pip:Importance ;
+      rdfs:label "Medium importance"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef4>
+      a       pip:EMAResult ;
+      pip:Value "89.4928938418042" ;
+      pip:timeStamp "2015-10-19T14:06:18.851Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f36>
+      a       pip:EMAResult ;
+      pip:Value "89.5130825572463" ;
+      pip:timeStamp "2015-10-19T14:06:18.569Z" .
+
+pip:base
+      a       owl:DatatypeProperty ;
+      rdfs:domain pip:Currency ;
+      rdfs:label "base"^^xsd:string ;
+      rdfs:range xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f78>
+      a       pip:EMAResult ;
+      pip:Value "89.5051105474889" ;
+      pip:timeStamp "2015-10-19T14:06:18.328Z" .
+
+pip:GBPUSD
+      a       owl:Class ;
+      rdfs:label "GBP/USD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:USD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:GBP ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee5>
+      a       pip:EMAResult ;
+      pip:Value "89.2649950030776" ;
+      pip:timeStamp "2015-10-19T14:06:18.951Z" .
+
+pip:EMA_8
+      a       pip:EMA ;
+      rdfs:label "EMA 8"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eef> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f08> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edf> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f85> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f28> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f18> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee7> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f99> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef7> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f91> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f12> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f63> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f02> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ed9> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f73> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f53> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa1> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f22> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f32> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f43> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee1> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edd> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f87> , pip:EMAResult_1 , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f16> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee9> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f97> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef5> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f14> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f61> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f75> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f49> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f20> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f55> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa3> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f69> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa9> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f41> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f34> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efb> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee3> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7edb> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eeb> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef3> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f89> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4d> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f47> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f26> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f05> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f77> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f81> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f95> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f67> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efd> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f57> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f36> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3c> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa7> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f1e> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef9> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee5> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eed> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f9b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f5f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fab> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef1> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f4b> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f71> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f3f> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f83> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f79> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f30> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f45> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f65> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7eff> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f10> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f93> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f38> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f59> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f2a> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fa5> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f24> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f51> , pip:EMAResult_4 ;
+      pip:hasIndicatorSetting
+              pip:EMAPeriodSetting_8 ;
+      pip:hasInstrument pip:AUDJPY_1 ;
+      pip:hasTimeFrame pip:m15 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f82>
+      a       pip:EMAResult ;
+      pip:Value "89.4932521219831" ;
+      pip:timeStamp "2015-10-19T14:06:18.305Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f11>
+      a       pip:EMAResult ;
+      pip:Value "89.5468242990714" ;
+      pip:timeStamp "2015-10-19T14:06:18.723Z" .
+
+pip:EURUSD_1
+      a       pip:EURUSD ;
+      rdfs:label "EURUSD 1"^^xsd:string ;
+      pip:baseCurrency pip:EUR_1 ;
+      pip:quoteCurrency pip:USD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f64>
+      a       pip:EMAResult ;
+      pip:Value "89.5203817353641" ;
+      pip:timeStamp "2015-10-19T14:06:18.385Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f92>
+      a       pip:EMAResult ;
+      pip:Value "89.5297489532484" ;
+      pip:timeStamp "2015-10-19T14:06:18.26Z" .
+
+pip:Importance
+      a       owl:Class ;
+      rdfs:label "Importance"^^xsd:string ;
+      rdfs:subClassOf pip:ValuePartition .
+
+pip:NewZealandEconomy
+      a       pip:Economy ;
+      rdfs:label "New zealand economy"^^xsd:string ;
+      pip:isGovernedBy pip:NewZealandGovernment .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f39>
+      a       pip:EMAResult ;
+      pip:Value "89.5675988808831" ;
+      pip:timeStamp "2015-10-19T14:06:18.553Z" .
+
+pip:MACDPeriodSetting_Signal
+      a       owl:Class ;
+      rdfs:label "MACDPeriod setting Signal"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f50>
+      a       pip:EMAResult ;
+      pip:Value "89.5569941744171" ;
+      pip:timeStamp "2015-10-19T14:06:18.469Z" .
+
+pip:RSIResult
+      a       owl:Class ;
+      rdfs:label "RSIResult"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+pip:GBPCAD
+      a       owl:Class ;
+      rdfs:label "GBP/CAD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:CAD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:GBP ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef1>
+      a       pip:EMAResult ;
+      pip:Value "89.3960088165949" ;
+      pip:timeStamp "2015-10-19T14:06:18.884Z" .
+
+pip:CanadaGovernment
+      a       pip:Government ;
+      rdfs:label "Canada government"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f25>
+      a       pip:EMAResult ;
+      pip:Value "89.5547051612163" ;
+      pip:timeStamp "2015-10-19T14:06:18.631Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f83>
+      a       pip:EMAResult ;
+      pip:Value "89.4853806926461" ;
+      pip:timeStamp "2015-10-19T14:06:18.305Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f79>
+      a       pip:EMAResult ;
+      pip:Value "89.5387553665412" ;
+      pip:timeStamp "2015-10-19T14:06:18.328Z" .
+
+pip:GBPNZD_1
+      a       pip:GBPNZD ;
+      rdfs:label "GBPNZD 1"^^xsd:string ;
+      pip:baseCurrency pip:GBP_1 ;
+      pip:quoteCurrency pip:NZD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee6>
+      a       pip:EMAResult ;
+      pip:Value "89.4368328189461" ;
+      pip:timeStamp "2015-10-19T14:06:18.938Z" .
+
+pip:RSIPeriodSetting
+      a       owl:Class ;
+      rdfs:label "RSIPeriod setting"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f65>
+      a       pip:EMAResult ;
+      pip:Value "89.5431164224826" ;
+      pip:timeStamp "2015-10-19T14:06:18.384Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f93>
+      a       pip:EMAResult ;
+      pip:Value "89.4941671340803" ;
+      pip:timeStamp "2015-10-19T14:06:18.26Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f10>
+      a       pip:EMAResult ;
+      pip:Value "89.5314930271605" ;
+      pip:timeStamp "2015-10-19T14:06:18.731Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f38>
+      a       pip:EMAResult ;
+      pip:Value "89.5221165592439" ;
+      pip:timeStamp "2015-10-19T14:06:18.562Z" .
+
+pip:Crossover_1
+      a       pip:Crossover ;
+      rdfs:label "Lines cross 1"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasFastIndicator
+              pip:EMA_8 ;
+      pip:hasSlowIndicator
+              pip:EMA_34 .
+
+pip:Low
+      a       pip:PeriodicPrice ;
+      rdfs:label "Low, the lowest price in a given period"^^xsd:string .
+
+pip:SSDResult_D
+      a       owl:Class ;
+      rdfs:label "SSDResult D"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef2>
+      a       pip:EMAResult ;
+      pip:Value "89.4873810095459" ;
+      pip:timeStamp "2015-10-19T14:06:18.87Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f24>
+      a       pip:EMAResult ;
+      pip:Value "89.5295433824158" ;
+      pip:timeStamp "2015-10-19T14:06:18.643Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f51>
+      a       pip:EMAResult ;
+      pip:Value "89.605017331625" ;
+      pip:timeStamp "2015-10-19T14:06:18.469Z" .
+
+pip:NZD_1
+      a       pip:NZD ;
+      rdfs:label "NZD 1"^^xsd:string ;
+      pip:base "dollar"^^xsd:string .
+
+pip:m30
+      a       pip:TimeFrame ;
+      rdfs:label "m30"^^xsd:string ;
+      pip:TimeSpanMinutes 30 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6a>
+      a       pip:EMAResult ;
+      pip:Value "89.5213280836825" ;
+      pip:timeStamp "2015-10-19T14:06:18.366Z" .
+
+pip:Trigger
+      a       owl:Class ;
+      rdfs:label "Trigger"^^xsd:string ;
+      rdfs:subClassOf pip:Trading .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7e>
+      a       pip:EMAResult ;
+      pip:Value "89.5058823479726" ;
+      pip:timeStamp "2015-10-19T14:06:18.315Z" .
+
+pip:Spread
+      a       owl:Class ;
+      rdfs:label "Spread"^^xsd:string ;
+      rdfs:subClassOf pip:Price .
+
+<http://pipseq.org#CrossoverResult_49006b60.150806c0ecc.-7f7f>
+      a       pip:CrossoverResult ;
+      pip:hasCrossDirection
+              pip:CrossDirectionAbove ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f80> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f81> ;
+      pip:hasSignal "Crossover_1" ;
+      pip:timeStamp "2015-10-19T14:06:18.313Z" .
+
+pip:SignalResult
+      a       owl:Class ;
+      rdfs:label "Signal result"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorAnalysis .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee7>
+      a       pip:EMAResult ;
+      pip:Value "89.306705024144" ;
+      pip:timeStamp "2015-10-19T14:06:18.938Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6b>
+      a       pip:EMAResult ;
+      pip:Value "89.564345035662" ;
+      pip:timeStamp "2015-10-19T14:06:18.366Z" .
+
+pip:CrossDirectionBelow
+      a       pip:CrossDirection ;
+      rdfs:label "Cross direction below"^^xsd:string .
+
+pip:CanadaEconomy
+      a       pip:Economy ;
+      rdfs:label "Canadian economy"^^xsd:string ;
+      pip:isGovernedBy pip:CanadaGovernment .
+
+pip:ThresholdCross
+      a       owl:Class ;
+      rdfs:label "Threshold cross"^^xsd:string ;
+      rdfs:subClassOf pip:Signal .
+
+pip:MACDResult_Signal
+      a       owl:Class ;
+      rdfs:label "MACDResult Signal"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ed9>
+      a       pip:EMAResult ;
+      pip:Value "89.2459103525708" ;
+      pip:timeStamp "2015-10-19T14:06:19.016Z" .
+
+pip:PeriodSetting
+      a       owl:Class ;
+      rdfs:label "MASetting"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorSetting .
+
+pip:hasImportance
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:CalendarEvent ;
+      rdfs:label "has importance"^^xsd:string ;
+      rdfs:range pip:Importance .
+
+pip:Strategy
+      a       owl:Class ;
+      rdfs:label "Strategy"^^xsd:string ;
+      rdfs:subClassOf pip:Trading .
+
+pip:UKGovernment
+      a       pip:Government ;
+      rdfs:label "UKGovernment"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ed8>
+      a       pip:EMAResult ;
+      pip:Value "89.3758175197897" ;
+      pip:timeStamp "2015-10-19T14:06:19.016Z" .
+
+pip:Instrument
+      a       owl:Class ;
+      rdfs:label "Instrument or pair"^^xsd:string ;
+      rdfs:subClassOf pip:forex .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7faa>
+      a       pip:EMAResult ;
+      pip:Value "89.574378910708" ;
+      pip:timeStamp "2015-10-19T14:06:17.639Z" .
+
+pip:Japan
+      a       pip:Country ;
+      rdfs:label "Japan"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:JapanEconomy .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee8>
+      a       pip:EMAResult ;
+      pip:Value "89.4467792193811" ;
+      pip:timeStamp "2015-10-19T14:06:18.928Z" .
+
+pip:Setup_1
+      a       pip:Setup ;
+      rdfs:label "Setup 1"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasTrigger pip:Trigger_1 .
+
+pip:IndicatorSetting
+      a       owl:Class ;
+      rdfs:label "Indicator setting"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorAnalysis .
+
+pip:Resistance
+      a       owl:Class ;
+      rdfs:label "Resistance"^^xsd:string ;
+      rdfs:subClassOf pip:PriceAction .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6c>
+      a       pip:EMAResult ;
+      pip:Value "89.5194571081053" ;
+      pip:timeStamp "2015-10-19T14:06:18.361Z" .
+
+pip:m5
+      a       pip:TimeFrame ;
+      rdfs:label "m5"^^xsd:string ;
+      pip:TimeSpanMinutes 5 .
+
+pip:Trigger_1
+      a       pip:Trigger ;
+      rdfs:label "Trigger 1"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasMarketEntry pip:MarketEntryBuy ;
+      pip:hasSignal pip:Crossover_1 .
+
+pip:hasSetup
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Strategy ;
+      rdfs:label "has setup"^^xsd:string ;
+      rdfs:range pip:Setup .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f48>
+      a       pip:EMAResult ;
+      pip:Value "89.5752513760848" ;
+      pip:timeStamp "2015-10-19T14:06:18.498Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f68>
+      a       pip:EMAResult ;
+      pip:Value "89.5226958803687" ;
+      pip:timeStamp "2015-10-19T14:06:18.373Z" .
+
+pip:Greece
+      a       pip:Country ;
+      rdfs:label "Greece"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:EuropeanUnionEconomy .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efa>
+      a       pip:EMAResult ;
+      pip:Value "89.5115040950825" ;
+      pip:timeStamp "2015-10-19T14:06:18.816Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ee9>
+      a       pip:EMAResult ;
+      pip:Value "89.3287153662035" ;
+      pip:timeStamp "2015-10-19T14:06:18.927Z" .
+
+pip:Tick
+      a       pip:TimeFrame ;
+      rdfs:comment "The period of time between consecutive changes in price of an instrument.  A tick-level view of price contains all the price detail within a timeframe."^^xsd:string ;
+      rdfs:label "Tick"^^xsd:string ;
+      pip:TimeSpanMinutes 0 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6d>
+      a       pip:EMAResult ;
+      pip:Value "89.5630018212798" ;
+      pip:timeStamp "2015-10-19T14:06:18.361Z" .
+
+pip:Last
+      a       pip:PeriodicPrice ;
+      rdfs:label "Last, the last price received regardless of period"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7d>
+      a       pip:EMAResult ;
+      pip:Value "89.4962926357079" ;
+      pip:timeStamp "2015-10-19T14:06:18.315Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f0f>
+      a       pip:EMAResult ;
+      pip:Value "89.5416803767964" ;
+      pip:timeStamp "2015-10-19T14:06:18.731Z" .
+
+pip:TimeStamp
+      a       owl:DatatypeProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (pip:IndicatorResult pip:SignalResult)
+              ] ;
+      rdfs:label "Time stamp"^^xsd:string ;
+      rdfs:range xsd:dateTime .
+
+pip:SSDPeriodSetting_MA
+      a       owl:Class ;
+      rdfs:label "SSDPeriod setting MA"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+pip:CADJPY
+      a       owl:Class ;
+      rdfs:label "CAD/JPY"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:JPY ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:CAD ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f49>
+      a       pip:EMAResult ;
+      pip:Value "89.6180918985153" ;
+      pip:timeStamp "2015-10-19T14:06:18.498Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f69>
+      a       pip:EMAResult ;
+      pip:Value "89.5572638938021" ;
+      pip:timeStamp "2015-10-19T14:06:18.373Z" .
+
+pip:IndicatorBasedStrategy_1
+      a       pip:IndicatorBasedStrategy ;
+      rdfs:label "Indicator based strategy using price, EMA 8 and EMA 34 in trending market"^^xsd:string ;
+      pip:graphTag
+              [ a       owl:Thing
+              ] ;
+      pip:hasSetup pip:Setup_1 ;
+      pip:hasTrade pip:Trade_1 .
+
+pip:EuropeanUnionEconomy
+      a       pip:Economy ;
+      rdfs:label "Euro economy"^^xsd:string ;
+      pip:isGovernedBy pip:EuropeanUnionGovernment .
+
+pip:JPY
+      a       owl:Class ;
+      rdfs:label "JPY"^^xsd:string ;
+      rdfs:subClassOf pip:Currency .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7efb>
+      a       pip:EMAResult ;
+      pip:Value "89.4871815175104" ;
+      pip:timeStamp "2015-10-19T14:06:18.816Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f46>
+      a       pip:EMAResult ;
+      pip:Value "89.5769085707642" ;
+      pip:timeStamp "2015-10-19T14:06:18.506Z" .
+
+pip:NewsEvent
+      a       owl:Class ;
+      rdfs:comment "An influential event typically within the scope of a given economy"^^xsd:string ;
+      rdfs:label "News event"^^xsd:string ;
+      rdfs:subClassOf pip:EconomicEvent .
+
+pip:HighImportance
+      a       pip:Importance ;
+      rdfs:label "High importance"^^xsd:string .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6e>
+      a       pip:EMAResult ;
+      pip:Value "89.5176339969916" ;
+      pip:timeStamp "2015-10-19T14:06:18.355Z" .
+
+pip:SSDResult_K
+      a       owl:Class ;
+      rdfs:label "SSDResult K"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f56>
+      a       pip:EMAResult ;
+      pip:Value "89.54007320241" ;
+      pip:timeStamp "2015-10-19T14:06:18.448Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8e>
+      a       pip:EMAResult ;
+      pip:Value "89.5201476083238" ;
+      pip:timeStamp "2015-10-19T14:06:18.269Z" .
+
+pip:AUDNZD_1
+      a       pip:AUDNZD ;
+      rdfs:label "AUDNZD 1"^^xsd:string ;
+      pip:baseCurrency pip:AUD_1 ;
+      pip:quoteCurrency pip:NZD_1 .
+
+pip:NZDUSD_1
+      a       pip:NZDUSD ;
+      rdfs:label "NZDUSD 1"^^xsd:string ;
+      pip:baseCurrency pip:NZD_1 ;
+      pip:quoteCurrency pip:USD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f47>
+      a       pip:EMAResult ;
+      pip:Value "89.6142983016668" ;
+      pip:timeStamp "2015-10-19T14:06:18.506Z" .
+
+pip:MACDResult_MACD
+      a       owl:Class ;
+      rdfs:label "MACDResult MACD"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+pip:MACDResult_Histogram
+      a       owl:Class ;
+      rdfs:label "MACDResult Histogram"^^xsd:string ;
+      rdfs:subClassOf pip:IndicatorResult .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f6f>
+      a       pip:EMAResult ;
+      pip:Value "89.563920515296" ;
+      pip:timeStamp "2015-10-19T14:06:18.355Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f57>
+      a       pip:EMAResult ;
+      pip:Value "89.5742438508644" ;
+      pip:timeStamp "2015-10-19T14:06:18.447Z" .
+
+pip:GBPCAD_1
+      a       pip:GBPCAD ;
+      rdfs:label "GBPCAD 1"^^xsd:string ;
+      pip:baseCurrency pip:GBP_1 ;
+      pip:quoteCurrency pip:CAD_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f8f>
+      a       pip:EMAResult ;
+      pip:Value "89.4874334706121" ;
+      pip:timeStamp "2015-10-19T14:06:18.269Z" .
+
+pip:GBPJPY
+      a       owl:Class ;
+      rdfs:label "GBP/JPY"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:GBP ;
+                owl:onProperty pip:baseCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:JPY ;
+                owl:onProperty pip:quoteCurrency
+              ] .
+
+pip:USDJPY_1
+      a       pip:USDJPY ;
+      rdfs:label "USDJPY 1"^^xsd:string ;
+      pip:baseCurrency pip:USD_1 ;
+      pip:quoteCurrency pip:JPY_1 .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7ef9>
+      a       pip:EMAResult ;
+      pip:Value "89.4805218019916" ;
+      pip:timeStamp "2015-10-19T14:06:18.825Z" .
+
+pip:issues
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Government ;
+      rdfs:label "issues"^^xsd:string ;
+      rdfs:range pip:Currency .
+
+<http://pipseq.org#CrossoverResult_49006b60.150806c0ecc.-7f7c>
+      a       pip:CrossoverResult ;
+      pip:hasCrossDirection
+              pip:CrossDirectionAbove ;
+      pip:hasIndicatorResult
+              <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f80> , <http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f7e> ;
+      pip:hasSignal "Crossover_1" ;
+      pip:timeStamp "2015-10-19T14:06:18.318Z" .
+
+pip:m1
+      a       pip:TimeFrame ;
+      rdfs:label "m1"^^xsd:string ;
+      pip:TimeSpanMinutes 1 .
+
+pip:SSDPeriodSetting_Raw
+      a       owl:Class ;
+      rdfs:label "SSDPeriod setting Raw"^^xsd:string ;
+      rdfs:subClassOf pip:PeriodSetting .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f31>
+      a       pip:EMAResult ;
+      pip:Value "89.5529850476501" ;
+      pip:timeStamp "2015-10-19T14:06:18.583Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f44>
+      a       pip:EMAResult ;
+      pip:Value "89.5782401906987" ;
+      pip:timeStamp "2015-10-19T14:06:18.513Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f58>
+      a       pip:EMAResult ;
+      pip:Value "89.5357803750874" ;
+      pip:timeStamp "2015-10-19T14:06:18.441Z" .
+
+pip:GBPNZD
+      a       owl:Class ;
+      rdfs:label "GBP/NZD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:NZD ;
+                owl:onProperty pip:quoteCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:GBP ;
+                owl:onProperty pip:baseCurrency
+              ] .
+
+pip:isGovernedBy
+      a       owl:ObjectProperty ;
+      rdfs:domain pip:Economy ;
+      rdfs:label "is governed by"^^xsd:string ;
+      rdfs:range pip:Government .
+
+pip:EURUSD
+      a       owl:Class ;
+      rdfs:label "EUR/USD"^^xsd:string ;
+      rdfs:subClassOf pip:Instrument ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:EUR ;
+                owl:onProperty pip:baseCurrency
+              ] ;
+      rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom pip:USD ;
+                owl:onProperty pip:quoteCurrency
+              ] .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7fab>
+      a       pip:EMAResult ;
+      pip:Value "89.4798136875338" ;
+      pip:timeStamp "2015-10-19T14:06:17.5Z" .
+
+pip:hasInstrument
+      a       owl:ObjectProperty ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (pip:Indicator pip:Trade)
+              ] ;
+      rdfs:label "has instrument"^^xsd:string ;
+      rdfs:range pip:Instrument .
+
+pip:Open
+      a       pip:PeriodicPrice ;
+      rdfs:label "Open, the initial price within a given period"^^xsd:string .
+
+pip:Australia
+      a       pip:Country ;
+      rdfs:label "Australia"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:AustraliaEconomy .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f30>
+      a       pip:EMAResult ;
+      pip:Value "89.5170622298096" ;
+      pip:timeStamp "2015-10-19T14:06:18.591Z" .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f45>
+      a       pip:EMAResult ;
+      pip:Value "89.6080907384879" ;
+      pip:timeStamp "2015-10-19T14:06:18.513Z" .
+
+pip:Value
+      a       owl:DatatypeProperty ;
+      rdfs:domain pip:IndicatorResult ;
+      rdfs:label "Value"^^xsd:string ;
+      rdfs:range xsd:float .
+
+<http://pipseq.org#EMAResult_49006b60.150806c0ecc.-7f59>
+      a       pip:EMAResult ;
+      pip:Value "89.5639114331234" ;
+      pip:timeStamp "2015-10-19T14:06:18.44Z" .
+
+pip:USD
+      a       owl:Class ;
+      rdfs:label "USD"^^xsd:string ;
+      rdfs:subClassOf pip:Currency .
+
+pip:NewZealand
+      a       pip:Country ;
+      rdfs:label "New zealand"^^xsd:string ;
+      pip:economicParticipantIn
+              pip:NewZealandEconomy .

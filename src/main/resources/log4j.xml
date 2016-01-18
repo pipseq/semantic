@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<!-- Log4j 1.x, https://logging.apache.org/log4j/2.x/manual/migration.html -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+  <appender name="semantic" class="org.apache.log4j.FileAppender">
+    <param name="File"   value="semantic.log" />
+    <param name="Append" value="true" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d %-5p (%C{2}:%L): %m%n"/>
+    </layout>
+  </appender>
+  <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d %-5p (%C{2}:%L): %m%n"/>
+    </layout>
+  </appender>
+  <category name="org.pipseq.rdf.jena.cfg">
+    <priority value="info" />
+    <appender-ref ref="semantic" />
+  </category>
+  <category name="org.pipseq.rdf.jena.listener">
+    <priority value="debug" />
+    <appender-ref ref="semantic" />
+  </category>
+  <category name="org.pipseq.rdf.jena.listener.ReleaseListener">
+    <priority value="error" />
+    <appender-ref ref="semantic" />
+  </category>
+  <category name="org.pipseq.spin">
+    <priority value="debug" />
+    <appender-ref ref="semantic" />
+  </category>
+  <root>
+    <priority value ="error" />
+    <appender-ref ref="STDOUT" />
+  </root>
+</log4j:configuration>
