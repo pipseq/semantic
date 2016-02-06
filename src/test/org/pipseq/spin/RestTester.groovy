@@ -45,17 +45,15 @@ import org.json.simple.JSONValue;
 public class RestTester {
 
 	String prolog = """
+@prefix fxs: <http://pipseq.org/2016/01/fx/strategy#> .
+@prefix pip: <http://pipseq.org/2016/01/forex#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix pip:     <http://pipseq.org#> .
-@prefix fxs:     <http://pipseq.org/strategy#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix fn:		<http://www.w3.org/2005/xpath-functions#> .
 
 """
-	
-	TwoStageRuleEngine ruleEngine = new TwoStageRuleEngine();
 	
 	@Before
 	public void setup() {

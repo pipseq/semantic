@@ -19,9 +19,11 @@ import com.hp.hpl.jena.sparql.expr.aggregate.AggregateRegistry;
 import com.hp.hpl.jena.sparql.function.FunctionEnv;
 import com.hp.hpl.jena.sparql.graph.NodeConst;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class allSameList.
+ * allSameList
+ * For use as a filter function within a SPARQL query.
+ * The allSameList function accepts any number of parameters.
+ * If all the parameters are the same it returns true else false.
  */
 public class allSameList implements Accumulator {
     

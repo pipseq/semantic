@@ -57,8 +57,8 @@ public class TradeTesterFileTime {
 	private static final Logger log = LoggerFactory.getLogger(TradeTesterFileTime.class);
 	static String prolog = """
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix pip:     <http://pipseq.org#> .
-@prefix fxs:     <http://pipseq.org/strategy#> .
+@prefix fxs: <http://pipseq.org/2016/01/fx/strategy#> .
+@prefix pip: <http://pipseq.org/2016/01/forex#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -89,18 +89,18 @@ public class TradeTesterFileTime {
 		WrapperRegistry.getInstance().setDefaultLoggingLevel(2);
 		RuleEngineFactory.getInstance().setModelFiles(
 			[
-			"C:/users/rspates/Google Drive/work/fx/tbc/forex/pipseq.ttl",
-			"C:/Users/rspates/Google Drive/work/fx/tbc//forexStrategy/pipseqStrategy_\$.ttl"
+			"C:/work/semFxModel/var/models/pipseq.org/2016/01/forex.ttl",
+			"C:/work/semFxModel/var/models/pipseq.org/2016/01/fx/strategy.ttl"
 			]);
 		ruleEngine = RuleEngineFactory.getInstance().getRuleEngine("test");
 		ruleEngine.setFeedbackQuery("""
 		describe ?s {
-			?s a <http://pipseq.org#TradeRecommendation> .
+			?s a <http://pipseq.org/2016/01/forex#TradeRecommendation> .
 		}
 		""");
 		ruleEngine.setOutcomeQuery("""
 		describe ?s {
-			?s a <http://pipseq.org#Trade> .
+			?s a <http://pipseq.org/2016/01/forex#Trade> .
 		}
 		""");
 		ruleEngine.setDiagnostics(true);
@@ -135,7 +135,7 @@ public class TradeTesterFileTime {
 	 */
 	private void testRun(){
 		//def file = "streamSegment.txt"
-		def file = "C:/work/semFxModel/fxModelDemo/bin/Debug/stream-7.txt"
+		def file = "stream-7.txt"
 		int i=100;
 		new File(file).eachLine { line ->
 			i++;
@@ -151,7 +151,7 @@ public class TradeTesterFileTime {
 				m5EMA(i,fields);
 			}
 		}
-		assert trades == 107
+		assert trades == 84
 	}
 	void m1EMA(int i,def fields){
 		def ask = fields[3].toDouble()

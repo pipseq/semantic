@@ -9,6 +9,8 @@ import org.topbraid.spin.util.JenaUtil;
 
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.query.*
+import com.hp.hpl.jena.query.ResultSet
 import com.hp.hpl.jena.rdf.model.*;
 import com.hp.hpl.jena.reasoner.*;
 import com.hp.hpl.jena.reasoner.rulesys.*;
@@ -21,7 +23,9 @@ import org.apache.jena.sparql.function.*;
 
 class TestAggregate {
 
-	
+	def buyResult = """--------\r\n| x    |\r\n========\r\n| true |\r\n--------\r\n"""
+	def bnResult = """--------\r\n| x    |\r\n========\r\n| _:b0 |\r\n--------\r\n"""
+
 	// test of makeLinkedList
 	@Test
 	public void test() {
@@ -34,8 +38,8 @@ class TestAggregate {
 :c2 :d "buy" .
 :c3 :d "buy" .
 """
-		
-	def queries = """
+
+		def query = """
 
 prefix exta: <http://org.pipseq.rdf.jena.aggregate/>
 
@@ -49,17 +53,21 @@ SELECT (exta:makeLinkedList(?b) AS ?x) {
 }
 
 """
-	AggMethodRegistry.init();
-	Model model = ModelFactory.createDefaultModel();
-	InputStream is = new ByteArrayInputStream(ttl.getBytes());
-	model.read(is,null,"TTL");
-	org.pipseq.rdf.jena.util.SparqlScope.scope(model);
-	model.write(System.out, "TTL");
+		AggMethodRegistry.init();
+		Model model = ModelFactory.createDefaultModel();
+		InputStream is = new ByteArrayInputStream(ttl.getBytes());
+		model.read(is,null,"TTL");
+		QueryExecution qe = QueryExecutionFactory.create(query, model);
+		ResultSet results =  qe.execSelect();
+		def rs = ResultSetFormatter.asText(results);
+		println rs
+
+		assert bnResult == rs, "wrong results"
 	}
 
-	
+
 	// test of allSameList
-	//@Test
+	@Test
 	public void test0() {
 		def ttl = """
 @prefix : <http://example.org/stuff/1.0/> .
@@ -70,8 +78,8 @@ SELECT (exta:makeLinkedList(?b) AS ?x) {
 :c2 :d "buy" .
 :c3 :d "buy" .
 """
-		
-	def queries = """
+
+		def query = """
 
 prefix exta: <http://org.pipseq.rdf.jena.aggregate/>
 
@@ -85,14 +93,18 @@ SELECT (exta:allSameList(?b) AS ?x) {
 }
 
 """
-	AggMethodRegistry.init();
-	Model model = ModelFactory.createDefaultModel();
-	InputStream is = new ByteArrayInputStream(ttl.getBytes());
-	model.read(is,null,"TTL");
-	org.pipseq.rdf.jena.util.SparqlScope.scope(model);
-	model.write(System.out, "TTL");
+		AggMethodRegistry.init();
+		Model model = ModelFactory.createDefaultModel();
+		InputStream is = new ByteArrayInputStream(ttl.getBytes());
+		model.read(is,null,"TTL");
+		QueryExecution qe = QueryExecutionFactory.create(query, model);
+		ResultSet results =  qe.execSelect();
+		def rs = ResultSetFormatter.asText(results);
+		println rs
+
+		assert buyResult == rs, "wrong results"
 	}
-	
+
 
 
 }

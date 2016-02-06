@@ -23,7 +23,7 @@ public class NSPrefixManager {
 	private static final Logger log = LoggerFactory.getLogger(NSPrefixManager.class);
 	private static NSPrefixManager manager;
 	private String domainPrefix = "pip";
-	private String defaultNamespace = "http://pipseq.org#";
+	private String defaultNamespace = "http://pipseq.org/2016/01/forex#";
 	private Map<String,String> prefixMap = new HashMap<String,String>();
 
 	/**

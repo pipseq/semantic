@@ -5,12 +5,15 @@
 package org.pipseq.spin;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.io.Closeable;
 
 import org.pipseq.common.DateTime;
@@ -144,51 +147,60 @@ public class RuleEngine implements Closeable {
 	 */
 	public ModelWrapper run() {
 		
-		// Create and add Model for inferred triples
-		nuTrpls = new ModelWrapper("newTriples");
-		//Model newTriples = ModelFactory.createDefaultModel();
-		ontBoxWrapper.get().addSubModel(nuTrpls.get());
+		try {
+			// Create and add Model for inferred triples
+			nuTrpls = new ModelWrapper("newTriples");
+			//Model newTriples = ModelFactory.createDefaultModel();
+			ontBoxWrapper.get().addSubModel(nuTrpls.get());
 
-		// Run all inferences
-		SPINExplanations explain = new SPINExplanations();
-		List<SPINStatistics> lstat = new ArrayList<SPINStatistics>();
+			// Run all inferences
+			SPINExplanations explain = new SPINExplanations();
+			List<SPINStatistics> lstat = new ArrayList<SPINStatistics>();
 
-		// diagnostics
-		if (Diagnostics) {
-			log.debug("Now="+DateTime.now().toISOString());
-			run(ontBoxWrapper.get(), nuTrpls.get(), explain, lstat, true/* single pass */, monitor);
-			for (StmtIterator si = nuTrpls.get().listStatements(); si.hasNext();){
-				Statement st = si.nextStatement();
-				Triple t = new Triple(st.getSubject().asNode(), st.getPredicate().asNode(), st.getObject().asNode());
-				log.debug("explain: "+explain.getClass(t) + " for "
-						+(t.getSubject().isBlank()
-								? "_:b"+t.getSubject().getBlankNodeLabel()
-								//? "_:b"+t.getSubject().getBlankNodeLabel().hashCode()
-								: t.getSubject().getLocalName())  + " "
-						+t.getPredicate().getLocalName() + " "
-						+t.getObject() + " "
-				);
+			// diagnostics
+			if (Diagnostics) {
+				log.debug("Now="+DateTime.now().toISOString());
+				run(ontBoxWrapper.get(), nuTrpls.get(), explain, lstat, true/* single pass */, monitor);
+				for (StmtIterator si = nuTrpls.get().listStatements(); si.hasNext();){
+					Statement st = si.nextStatement();
+					Triple t = new Triple(st.getSubject().asNode(), st.getPredicate().asNode(), st.getObject().asNode());
+					log.debug("explain: "+explain.getClass(t) + " for "
+							+(t.getSubject().isBlank()
+									? "_:b"+t.getSubject().getBlankNodeLabel()
+									//? "_:b"+t.getSubject().getBlankNodeLabel().hashCode()
+									: t.getSubject().getLocalName())  + " "
+							+t.getPredicate().getLocalName() + " "
+							+t.getObject() + " "
+					);
+				}
+				for (SPINStatistics ss : lstat){
+					log.debug("spinStat: "+ ss.getLabel()+" duration="+ss.getDuration()+" context="+ss.getContext());
+				}
+			} else {
+				run(ontBoxWrapper.get(), nuTrpls.get(), null, null, true/* single pass */, null);
 			}
-			for (SPINStatistics ss : lstat){
-				log.debug("spinStat: "+ ss.getLabel()+" duration="+ss.getDuration()+" context="+ss.getContext());
+
+			ontBoxWrapper.get().removeSubModel(nuTrpls.get()); // cleanup
+			
+			// feedback
+			if (getFeedbackQuery() != null){
+				Model m = Sparql.queryDescribe(nuTrpls.get(), getFeedbackQuery());
+				getModel().add(m);
 			}
-		} else {
-			run(ontBoxWrapper.get(), nuTrpls.get(), null, null, true/* single pass */, null);
-		}
 
-		ontBoxWrapper.get().removeSubModel(nuTrpls.get()); // cleanup
-		
-		// feedback
-		if (getFeedbackQuery() != null){
-			Model m = Sparql.queryDescribe(nuTrpls.get(), getFeedbackQuery());
-			getModel().add(m);
-		}
-
-		// outcome
-		if (getOutcomeQuery() != null){
-			Model m = Sparql.queryDescribe(nuTrpls.get(), getOutcomeQuery());
-			//getModel().add(m);	// TODO - feedback too?
-			outcomeResults = m.size() > 0;
+			// outcome
+			if (getOutcomeQuery() != null){
+				Model m = Sparql.queryDescribe(nuTrpls.get(), getOutcomeQuery());
+				//getModel().add(m);	// TODO - feedback too?
+				outcomeResults = m.size() > 0;
+			}
+		} catch (Exception e) {
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			PrintStream ps = new PrintStream(baos);
+			e.printStackTrace(ps);
+			String err = e.getMessage()+", "+baos.toString();
+			log.error(err);
+			throw new RuntimeException(err);
 		}
 
 		return nuTrpls;

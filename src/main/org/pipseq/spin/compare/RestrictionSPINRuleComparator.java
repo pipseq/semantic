@@ -24,7 +24,7 @@ public class RestrictionSPINRuleComparator  implements SPINRuleComparator {
 	
 	private Map<String,String> map = new HashMap<String,String>();
 	private static String query = ""
-			+ "prefix pip:     <http://pipseq.org#> \n"
+			+ "prefix pip: <http://pipseq.org/2016/01/forex#> \n"
 			+ "prefix owl:     <http://www.w3.org/2002/07/owl#> \n"
 			+ ""
 			+ "SELECT *{"

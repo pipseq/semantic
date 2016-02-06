@@ -56,15 +56,14 @@ public class TradeTesterFile {
 	private static final Logger log = LoggerFactory.getLogger(TradeTesterFile.class);
 	static String prolog = """
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix pip:     <http://pipseq.org#> .
-@prefix fxs:     <http://pipseq.org/strategy#> .
+@prefix fxs: <http://pipseq.org/2016/01/fx/strategy#> .
+@prefix pip: <http://pipseq.org/2016/01/forex#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix fn:		<http://www.w3.org/2005/xpath-functions#> .
 
 """
-	TwoStageRuleEngine ruleEngine;
 
 	@After
 	public void shutdown(){
@@ -75,15 +74,15 @@ public class TradeTesterFile {
 	public void setup() {
 		WrapperRegistry.getInstance().setDefaultLoggingLevel(2);
 		RuleEngineFactory.getInstance().setListenParms(
-			["http://pipseq.org#RuleContext","http://pipseq.org#hasTimeFrame"]);
+			["http://pipseq.org/2016/01/forex#RuleContext","http://pipseq.org/2016/01/forex#hasTimeFrame"]);
 		RuleEngineFactory.getInstance().setModelFiles(
 			[
-			"C:/users/rspates/Google Drive/work/fx/tbc/forex/pipseq.ttl",
-			"C:/Users/rspates/Google Drive/work/fx/tbc/forexStrategy/pipseqStrategy.ttl"
+			"C:/work/semFxModel/var/models/pipseq.org/2016/01/forex.ttl",
+			"C:/work/semFxModel/var/models/pipseq.org/2016/01/fx/strategy.ttl"
 			]);
 		RuleEngineFactory.getInstance().setSyphonQuery("""
 		describe ?s {
-			?s a <http://pipseq.org#TradeRecommendation> .
+			?s a <http://pipseq.org/2016/01/forex#TradeRecommendation> .
 		}
 		""");
 		ruleEngine = RuleEngineFactory.getInstance().getRuleEngine("test");

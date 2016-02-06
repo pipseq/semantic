@@ -5,16 +5,12 @@ import java.util.Map;
 
 import org.pipseq.common.DateTime;
 import org.pipseq.common.IClock
-import org.pipseq.rdf.jena.model.RowMapper;import org.pipseq.rdf.jena.model.Sparql;
+import org.pipseq.rdf.jena.model.RowMapper;
+import org.pipseq.rdf.jena.model.Sparql;
 import org.pipseq.rdf.jena.model.SparqlResultRowObject;
 
 import com.google.gson.Gson
 import com.hp.hpl.jena.rdf.model.Model;
-
-
-
-
-
 import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,10 +63,12 @@ import org.json.simple.JSONValue;
 public class TradeTesterTime {
 
 	private static final Logger log = LoggerFactory.getLogger(TradeTesterTime.class);
+	
+	def Pair = "EURCHF"
 	static String prolog = """
+@prefix fxs: 	<http://pipseq.org/2016/01/fx/strategy#> .
+@prefix pip: 	<http://pipseq.org/2016/01/forex#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix pip:     <http://pipseq.org#> .
-@prefix fxs:     <http://pipseq.org/strategy#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -80,26 +78,26 @@ public class TradeTesterTime {
 
 
 	public TradeTesterTime(){
-		//WrapperRegistry.getInstance().setDefaultLoggingLevel(0);
-		RuleEngineFactory.getInstance().setModelFiles(
-			[
-			"C:/users/rspates/Google Drive/work/fx/tbc/forex/pipseq.ttl",
-			"C:/Users/rspates/Google Drive/work/fx/tbc//forexStrategy/pipseqStrategy_\$.ttl"
-			]);
-		ruleEngine = RuleEngineFactory.getInstance().getRuleEngine("test"+(rec++));
-		ruleEngine.setFeedbackQuery("""
-		describe ?s {
-			?s a <http://pipseq.org#TradeRecommendation> .
-		}
-		""");
-		ruleEngine.setOutcomeQuery("""
-		describe ?s {
-			?s a <http://pipseq.org#Trade> .
-		}
-		""");
-		ruleEngine.setDiagnostics(true);
-		
-
+//		//WrapperRegistry.getInstance().setDefaultLoggingLevel(0);
+//		RuleEngineFactory.getInstance().setModelFiles(
+//			[
+//			"C:/work/semFxModel/var/models/pipseq.org/2016/01/forex.ttl",
+//			"C:/work/semFxModel/var/models/pipseq.org/2016/01/fx/strategy.ttl"
+//			]);
+//		ruleEngine = RuleEngineFactory.getInstance().getRuleEngine("test"+(rec++));
+//		ruleEngine.setFeedbackQuery("""
+//		describe ?s {
+//			?s a <http://pipseq.org/2016/01/forex#TradeRecommendation> .
+//		}
+//		""");
+//		ruleEngine.setOutcomeQuery("""
+//		describe ?s {
+//			?s a <http://pipseq.org/2016/01/forex#Trade> .
+//		}
+//		""");
+//		ruleEngine.setDiagnostics(true);
+//		
+//
 	}
 	
 	RuleEngine ruleEngine;
@@ -113,21 +111,21 @@ public class TradeTesterTime {
 	@Before
 	public void setup() {
 
-		WrapperRegistry.getInstance().setDefaultLoggingLevel(6);
+		WrapperRegistry.getInstance().setDefaultLoggingLevel(5);
 		RuleEngineFactory.getInstance().setModelFiles(
 			[
-			"C:/users/rspates/Google Drive/work/fx/tbc/forex/pipseq.ttl",
-			"C:/Users/rspates/Google Drive/work/fx/tbc//forexStrategy/pipseqStrategy_\$.ttl"
+			"C:/work/semFxModel/var/models/pipseq.org/2016/01/forex.ttl",
+			"C:/work/semFxModel/var/models/pipseq.org/2016/01/fx/strategy.ttl"
 			]);
 		ruleEngine = RuleEngineFactory.getInstance().getRuleEngine("test"+(rec++));
 		ruleEngine.setFeedbackQuery("""
 		describe ?s {
-			?s a <http://pipseq.org#TradeRecommendation> .
+			?s a <http://pipseq.org/2016/01/forex#TradeRecommendation> .
 		}
 		""");
 		ruleEngine.setOutcomeQuery("""
 		describe ?s {
-			?s a <http://pipseq.org#Trade> .
+			?s a <http://pipseq.org/2016/01/forex#Trade> .
 		}
 		""");
 		ruleEngine.setDiagnostics(true);
@@ -153,7 +151,7 @@ public class TradeTesterTime {
 					String s2 = """
 		pip:RuleContext
 		rdf:type pip:RuleContextSingleton ;
-		pip:hasInstrument pip:AUDJPY ;
+		pip:hasInstrument pip:${Pair} ;
 		pip:hasTimeFrame pip:m1 ;
 .
 pip:EMAResult_f102_m1
@@ -227,7 +225,7 @@ fxs:PriceFastSlowPattern_1
 
 		pip:RuleContext
 		rdf:type pip:RuleContextSingleton ;
-		pip:hasInstrument pip:AUDJPY ;
+		pip:hasInstrument pip:${Pair} ;
 		pip:hasTimeFrame pip:m5 ;
 .
 
@@ -274,7 +272,7 @@ fxs:EMA_34 pip:hasIndicatorResult pip:EMAResult_s103
 
 		pip:RuleContext
 		rdf:type pip:RuleContextSingleton ;
-		pip:hasInstrument pip:AUDJPY ;
+		pip:hasInstrument pip:${Pair} ;
 		pip:hasTimeFrame pip:m5 ;
 .
 
@@ -303,11 +301,7 @@ fxs:RSI_9 pip:hasIndicatorResult pip:RSIResult_101b ;
 	
 		},
 	"dump":{
-	/*
-	 http://www.w3.org/1999/02/22-rdf-syntax-ns#type:http://pipseq.org#Trade, 
-	 http://pipseq.org#TimeStamp:2015-12-02T20:36:39.866Z, 
-	 http://pipseq.org#hasPosition:http://pipseq.org#PositionLong
-	 */
+
 	def map = Sparql.queryMap(ruleEngine.getLastInferences().get(), """
 		select ?p ?o {
 			?s a pip:Trade .
@@ -375,6 +369,36 @@ fxs:RSI_9 pip:hasIndicatorResult pip:RSIResult_101b ;
 		
 		setTime("10/19/2014 14:30:55")
 		mapComponents["ema m5 cross"](true)
+	}
+	
+	@Test
+	public void testPairs(){
+		
+		def pairs = [
+ "AUDJPY",
+ "AUDUSD",
+ "EURCHF",
+ "EURGBP",
+ "EURJPY",
+ "EURUSD",
+ "GBPJPY",
+ "GBPUSD",
+ "NZDUSD",
+ "USDCAD",
+ "USDCHF",
+ "USDCNH",
+ "USDJPY",
+			]
+		pairs.each{
+			Pair = it
+			setTime("10/19/2014 14:20:55")
+			mapComponents["ema m1 pattern"](false)
+			mapComponents["rsi m5 threshold"](false)
+			
+			setTime("10/19/2014 14:30:55")
+			mapComponents["ema m5 cross"](true)
+			setup();
+		}
 	}
 	
 }

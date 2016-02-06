@@ -14,9 +14,10 @@ class TestGet {
 		
 		// this works!
 		//getText('http://www.scubed.cc', '/pipseq/2016/01/forex.ttl', [:])
-		//getText('http://www.pipseq.org', '/2016/01/forex.ttl', [:])
+		
+		getText('http://www.pipseq.org', '/2016/01/forex.ttl', [:])
 		//getText('http://www.w3.org/2000/01', '/rdf-schema', [:])
-		getText('http://www.pipseq.org', '/forex.rdf', [:])
+		//getText('http://www.pipseq.org', '/forex.rdf', [:])
 	}
 
 	def get(){

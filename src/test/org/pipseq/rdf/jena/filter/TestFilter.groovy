@@ -23,14 +23,14 @@ class TestFilter {
 	OntModel ontModel = JenaUtil.createOntologyModel(OntModelSpec.OWL_MEM,baseModel);
 	String prolog = """
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix pip:     <http://pipseq.org#> .
+@prefix pip: <http://pipseq.org/2016/01/forex#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 """
 	public PipsTester(){
-		String uri = "http://pipseq.org#";
+		String uri = "http://pipseq.org/2016/01/forex#";
 		PrintUtil.registerPrefix("pip", uri);
 		// Initialize system functions and templates
 		SPINModuleRegistry.get().init();

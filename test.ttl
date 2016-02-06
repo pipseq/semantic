@@ -1,13 +1,13 @@
-@prefix :      <http://pipseq.org#> .
+@prefix : <http://pipseq.org/2016/01/forex#> .
+@prefix pip: <http://pipseq.org/2016/01/forex#> .
+@prefix fxs: <http://pipseq.org/2016/01/fx/strategy#> .
 @prefix agg:   <java:org.pipseq.rdf.jena.aggregate.> .
-@prefix fxs:   <http://pipseq.org/strategy#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix afn:   <http://jena.hpl.hp.com/ARQ/function#> .
 @prefix fn:    <http://www.w3.org/2005/xpath-functions#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix pip:   <http://pipseq.org#> .
 @prefix spin:  <http://spinrdf.org/spin#> .
 @prefix sp:    <http://spinrdf.org/sp#> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
@@ -719,7 +719,7 @@ _:b59   a              sp:Bind ;
         sp:expression  [ a  afn:now ] ;
         sp:variable    [ sp:varName  "ts"^^xsd:string ] .
 
-<http://pipseq.org>  a   owl:Ontology ;
+<http://pipseq.org/2016/01/forex>  a   owl:Ontology ;
         owl:imports      <http://www.w3.org/2004/02/skos/core> , <http://spinrdf.org/spl> , <http://spinrdf.org/spin> ;
         owl:versionInfo  "Created with TopBraid Composer"^^xsd:string .
 
@@ -1281,9 +1281,9 @@ pip:USD_1  a        pip:USD ;
         rdfs:label  "USD 1"^^xsd:string ;
         pip:base    "dollar"^^xsd:string .
 
-<http://pipseq.org/strategy>
+<http://pipseq.org/2016/01/fx/strategy>
         a            owl:Ontology ;
-        owl:imports  <http://pipseq.org> .
+        owl:imports  <http://pipseq.org/2016/01/forex> .
 
 _:b160  a         sp:SubQuery ;
         sp:query  [ a                   sp:Select ;

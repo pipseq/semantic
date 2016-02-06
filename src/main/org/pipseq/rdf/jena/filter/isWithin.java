@@ -9,6 +9,15 @@ import org.slf4j.LoggerFactory;
 import com.hp.hpl.jena.sparql.expr.NodeValue;
 import com.hp.hpl.jena.sparql.function.FunctionBase3;
 
+/**
+ * isWithin
+ * For use as a filter function within a SPARQL query.
+ * Returns true if arg0 > DateTime.now() - {value as time component}
+ * i.e., arg0 more recent than now - time component * factor
+ * arg0 the dateTime
+ * arg1 is an integer value
+ * arg2 is a time component
+ */
 public class isWithin extends FunctionBase3 {
 	private static final Logger log = LoggerFactory
 			.getLogger(isWithin.class);
@@ -20,13 +29,6 @@ public class isWithin extends FunctionBase3 {
 		super();
 	}
 
-	/**
-	 * returns true if arg0 > DateTime.now() - {value as time component}
-	 * i.e., arg0 more recent than now - time component * factor
-	 * arg0 the dateTime
-	 * arg1 is an integer value
-	 * arg2 is a time component
-	 */
 	/*
 	 * (non-Javadoc)
 	 * 
